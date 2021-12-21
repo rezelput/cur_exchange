@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientadd_btn = new System.Windows.Forms.ToolStripMenuItem();
-            this.операцияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.opadd_btn = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.клиентToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.операцияToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,7 +83,7 @@ namespace WindowsFormsApp1
             // 
             this.добавитьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientadd_btn,
-            this.операцияToolStripMenuItem});
+            this.opadd_btn});
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
             this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить";
@@ -93,13 +93,14 @@ namespace WindowsFormsApp1
             this.clientadd_btn.Name = "clientadd_btn";
             this.clientadd_btn.Size = new System.Drawing.Size(180, 22);
             this.clientadd_btn.Text = "Клиент";
-            this.clientadd_btn.Click += new System.EventHandler(this.клиентToolStripMenuItem_Click);
+            this.clientadd_btn.Click += new System.EventHandler(this.clientadd_btn_Click);
             // 
-            // операцияToolStripMenuItem
+            // opadd_btn
             // 
-            this.операцияToolStripMenuItem.Name = "операцияToolStripMenuItem";
-            this.операцияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.операцияToolStripMenuItem.Text = "Операция";
+            this.opadd_btn.Name = "opadd_btn";
+            this.opadd_btn.Size = new System.Drawing.Size(180, 22);
+            this.opadd_btn.Text = "Операция";
+            this.opadd_btn.Click += new System.EventHandler(this.opadd_btn_Click);
             // 
             // редактироватьToolStripMenuItem
             // 
@@ -165,6 +166,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CUR_EXCHANGE";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -182,7 +184,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientadd_btn;
-        private System.Windows.Forms.ToolStripMenuItem операцияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem opadd_btn;
         private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem клиентToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem операцияToolStripMenuItem1;

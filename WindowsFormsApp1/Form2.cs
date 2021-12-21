@@ -51,5 +51,46 @@ namespace WindowsFormsApp1
                 cmd.ExecuteNonQuery();
             }
         }
+
+        private void очиститьФормыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+        }
+
+        private void addbtn_CheckedChanged(object sender, EventArgs e)
+        {
+             if (addbtn.Checked)
+            {
+                comboBox2.Enabled = false;
+                comboBox1.Enabled = true;
+
+                textBox1.Enabled = true;
+                textBox2.Enabled = true;
+                textBox3.Enabled = true;
+                updatebtn.Checked = false;
+            }
+        }
+
+        private void updatebtn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (updatebtn.Checked)
+            {
+                comboBox1.Enabled = false;
+                comboBox2.Enabled = true;
+                //выкл
+                textBox1.Enabled = false;
+                textBox2.Enabled = false;
+                textBox3.Enabled = false;
+
+                addbtn.Checked = false;
+            }
+        }
+
+        private void CloseFr2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

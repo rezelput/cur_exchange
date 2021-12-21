@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Grp_Add = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,46 +40,46 @@ namespace WindowsFormsApp1
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cITYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet = new WindowsFormsApp1.DataSet();
+            this.addbtn = new System.Windows.Forms.RadioButton();
+            this.Grp_Edit = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.updatebtn = new System.Windows.Forms.RadioButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.очиститьФормыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.dataSet = new WindowsFormsApp1.DataSet();
-            this.cITYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CloseFr2 = new System.Windows.Forms.ToolStripButton();
             this.cITYTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.CITYTableAdapter();
-            this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uSERSTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.USERSTableAdapter();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
+            this.Grp_Add.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cITYBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
+            this.Grp_Edit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // Grp_Add
             // 
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(40, 97);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(332, 320);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Добавить";
+            this.Grp_Add.Controls.Add(this.label5);
+            this.Grp_Add.Controls.Add(this.textBox3);
+            this.Grp_Add.Controls.Add(this.label3);
+            this.Grp_Add.Controls.Add(this.textBox2);
+            this.Grp_Add.Controls.Add(this.label2);
+            this.Grp_Add.Controls.Add(this.textBox1);
+            this.Grp_Add.Controls.Add(this.label1);
+            this.Grp_Add.Controls.Add(this.comboBox1);
+            this.Grp_Add.Controls.Add(this.addbtn);
+            this.Grp_Add.Location = new System.Drawing.Point(40, 97);
+            this.Grp_Add.Name = "Grp_Add";
+            this.Grp_Add.Size = new System.Drawing.Size(332, 320);
+            this.Grp_Add.TabIndex = 0;
+            this.Grp_Add.TabStop = false;
+            this.Grp_Add.Text = "Добавить";
             // 
             // label5
             // 
@@ -149,28 +149,39 @@ namespace WindowsFormsApp1
             this.comboBox1.TabIndex = 1;
             this.comboBox1.ValueMember = "ID";
             // 
-            // radioButton1
+            // cITYBindingSource
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(25, 32);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(75, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Добавить";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.cITYBindingSource.DataMember = "CITY";
+            this.cITYBindingSource.DataSource = this.dataSet;
             // 
-            // groupBox2
+            // dataSet
             // 
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Location = new System.Drawing.Point(407, 97);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(270, 320);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Изменить";
+            this.dataSet.DataSetName = "DataSet";
+            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // addbtn
+            // 
+            this.addbtn.AutoSize = true;
+            this.addbtn.Location = new System.Drawing.Point(25, 32);
+            this.addbtn.Name = "addbtn";
+            this.addbtn.Size = new System.Drawing.Size(75, 17);
+            this.addbtn.TabIndex = 0;
+            this.addbtn.TabStop = true;
+            this.addbtn.Text = "Добавить";
+            this.addbtn.UseVisualStyleBackColor = true;
+            this.addbtn.CheckedChanged += new System.EventHandler(this.addbtn_CheckedChanged);
+            // 
+            // Grp_Edit
+            // 
+            this.Grp_Edit.Controls.Add(this.label4);
+            this.Grp_Edit.Controls.Add(this.comboBox2);
+            this.Grp_Edit.Controls.Add(this.updatebtn);
+            this.Grp_Edit.Location = new System.Drawing.Point(407, 97);
+            this.Grp_Edit.Name = "Grp_Edit";
+            this.Grp_Edit.Size = new System.Drawing.Size(270, 320);
+            this.Grp_Edit.TabIndex = 1;
+            this.Grp_Edit.TabStop = false;
+            this.Grp_Edit.Text = "Изменить";
             // 
             // label4
             // 
@@ -192,22 +203,28 @@ namespace WindowsFormsApp1
             this.comboBox2.TabIndex = 1;
             this.comboBox2.ValueMember = "ID";
             // 
-            // radioButton2
+            // uSERSBindingSource
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(28, 32);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(76, 17);
-            this.radioButton2.TabIndex = 0;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Изменить";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.uSERSBindingSource.DataMember = "USERS";
+            this.uSERSBindingSource.DataSource = this.dataSet;
+            // 
+            // updatebtn
+            // 
+            this.updatebtn.AutoSize = true;
+            this.updatebtn.Location = new System.Drawing.Point(28, 32);
+            this.updatebtn.Name = "updatebtn";
+            this.updatebtn.Size = new System.Drawing.Size(76, 17);
+            this.updatebtn.TabIndex = 0;
+            this.updatebtn.TabStop = true;
+            this.updatebtn.Text = "Изменить";
+            this.updatebtn.UseVisualStyleBackColor = true;
+            this.updatebtn.CheckedChanged += new System.EventHandler(this.updatebtn_CheckedChanged);
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSplitButton1,
-            this.toolStripButton1});
+            this.CloseFr2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -229,43 +246,30 @@ namespace WindowsFormsApp1
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // очиститьФормыToolStripMenuItem
             // 
             this.очиститьФормыToolStripMenuItem.Name = "очиститьФормыToolStripMenuItem";
-            this.очиститьФормыToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.очиститьФормыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.очиститьФормыToolStripMenuItem.Text = "Очистить формы";
+            this.очиститьФормыToolStripMenuItem.Click += new System.EventHandler(this.очиститьФормыToolStripMenuItem_Click);
             // 
-            // toolStripButton1
+            // CloseFr2
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(57, 22);
-            this.toolStripButton1.Text = "Закрыть";
-            // 
-            // dataSet
-            // 
-            this.dataSet.DataSetName = "DataSet";
-            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cITYBindingSource
-            // 
-            this.cITYBindingSource.DataMember = "CITY";
-            this.cITYBindingSource.DataSource = this.dataSet;
+            this.CloseFr2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.CloseFr2.Image = ((System.Drawing.Image)(resources.GetObject("CloseFr2.Image")));
+            this.CloseFr2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CloseFr2.Name = "CloseFr2";
+            this.CloseFr2.Size = new System.Drawing.Size(57, 22);
+            this.CloseFr2.Text = "Закрыть";
+            this.CloseFr2.Click += new System.EventHandler(this.CloseFr2_Click);
             // 
             // cITYTableAdapter
             // 
             this.cITYTableAdapter.ClearBeforeFill = true;
-            // 
-            // uSERSBindingSource
-            // 
-            this.uSERSBindingSource.DataMember = "USERS";
-            this.uSERSBindingSource.DataSource = this.dataSet;
             // 
             // uSERSTableAdapter
             // 
@@ -277,20 +281,21 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.Grp_Edit);
+            this.Controls.Add(this.Grp_Add);
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ДОБАВИТЬ/ИЗМЕНИТЬ \"КЛИЕНТ\"";
             this.Load += new System.EventHandler(this.Form2_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.Grp_Add.ResumeLayout(false);
+            this.Grp_Add.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cITYBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
+            this.Grp_Edit.ResumeLayout(false);
+            this.Grp_Edit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cITYBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,8 +303,8 @@ namespace WindowsFormsApp1
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.GroupBox Grp_Add;
+        private System.Windows.Forms.RadioButton addbtn;
         private System.Windows.Forms.ComboBox comboBox1;
        // private DataSet2TableAdapters.CLIENTTableAdapter cLIENTTableAdapter;
         private System.Windows.Forms.Label label1;
@@ -308,15 +313,15 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.GroupBox Grp_Edit;
+        private System.Windows.Forms.RadioButton updatebtn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem очиститьФормыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton CloseFr2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox3;
         private DataSet dataSet;

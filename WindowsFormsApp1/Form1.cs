@@ -33,15 +33,23 @@ namespace WindowsFormsApp1
                 this.Close();
         }
 
-        private void клиентToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form2 f2 = new Form2();
-            f2.Hide();
-        }
+        
 
         private void oPERATIONBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void clientadd_btn_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Show();
+        }
+
+        private void opadd_btn_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new Form3();
+            f3.Show();
         }
     }
 }

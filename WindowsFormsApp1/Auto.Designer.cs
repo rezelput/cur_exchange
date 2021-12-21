@@ -31,16 +31,16 @@ namespace WindowsFormsApp1
         {
             this.components = new System.ComponentModel.Container();
             this.usersbox = new System.Windows.Forms.ComboBox();
+            this.sTAFFBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet = new WindowsFormsApp1.DataSet();
             this.pswrd = new System.Windows.Forms.TextBox();
             this.EnterBtn = new System.Windows.Forms.Button();
             this.CancelBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataSet = new WindowsFormsApp1.DataSet();
-            this.sTAFFBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sTAFFTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.STAFFTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // usersbox
@@ -48,15 +48,25 @@ namespace WindowsFormsApp1
             this.usersbox.DataSource = this.sTAFFBindingSource;
             this.usersbox.DisplayMember = "LOGIN";
             this.usersbox.FormattingEnabled = true;
-            this.usersbox.Location = new System.Drawing.Point(129, 41);
+            this.usersbox.Location = new System.Drawing.Point(128, 23);
             this.usersbox.Name = "usersbox";
             this.usersbox.Size = new System.Drawing.Size(142, 22);
             this.usersbox.TabIndex = 0;
             this.usersbox.ValueMember = "LOGIN";
             // 
+            // sTAFFBindingSource
+            // 
+            this.sTAFFBindingSource.DataMember = "STAFF";
+            this.sTAFFBindingSource.DataSource = this.dataSet;
+            // 
+            // dataSet
+            // 
+            this.dataSet.DataSetName = "DataSet";
+            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // pswrd
             // 
-            this.pswrd.Location = new System.Drawing.Point(129, 68);
+            this.pswrd.Location = new System.Drawing.Point(128, 50);
             this.pswrd.Name = "pswrd";
             this.pswrd.Size = new System.Drawing.Size(142, 21);
             this.pswrd.TabIndex = 1;
@@ -64,7 +74,7 @@ namespace WindowsFormsApp1
             // 
             // EnterBtn
             // 
-            this.EnterBtn.Location = new System.Drawing.Point(40, 115);
+            this.EnterBtn.Location = new System.Drawing.Point(39, 97);
             this.EnterBtn.Name = "EnterBtn";
             this.EnterBtn.Size = new System.Drawing.Size(87, 24);
             this.EnterBtn.TabIndex = 2;
@@ -74,7 +84,7 @@ namespace WindowsFormsApp1
             // 
             // CancelBtn
             // 
-            this.CancelBtn.Location = new System.Drawing.Point(173, 115);
+            this.CancelBtn.Location = new System.Drawing.Point(172, 97);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(87, 24);
             this.CancelBtn.TabIndex = 3;
@@ -85,7 +95,7 @@ namespace WindowsFormsApp1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 44);
+            this.label1.Location = new System.Drawing.Point(37, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 14);
             this.label1.TabIndex = 4;
@@ -94,21 +104,11 @@ namespace WindowsFormsApp1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 74);
+            this.label2.Location = new System.Drawing.Point(37, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 14);
             this.label2.TabIndex = 5;
             this.label2.Text = "Пароль";
-            // 
-            // dataSet
-            // 
-            this.dataSet.DataSetName = "DataSet";
-            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sTAFFBindingSource
-            // 
-            this.sTAFFBindingSource.DataMember = "STAFF";
-            this.sTAFFBindingSource.DataSource = this.dataSet;
             // 
             // sTAFFTableAdapter
             // 
@@ -119,7 +119,7 @@ namespace WindowsFormsApp1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(299, 175);
+            this.ClientSize = new System.Drawing.Size(303, 140);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CancelBtn);
@@ -133,8 +133,8 @@ namespace WindowsFormsApp1
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Auto";
             this.Load += new System.EventHandler(this.Auto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
