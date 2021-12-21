@@ -19,12 +19,24 @@ namespace WindowsFormsApp1
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet.USERS". При необходимости она может быть перемещена или удалена.
+            this.uSERSTableAdapter.Fill(this.dataSet.USERS);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet.CURRENCY". При необходимости она может быть перемещена или удалена.
+            this.cURRENCYTableAdapter.Fill(this.dataSet.CURRENCY);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet.TYPE_OPERATION". При необходимости она может быть перемещена или удалена.
+            this.tYPE_OPERATIONTableAdapter.Fill(this.dataSet.TYPE_OPERATION);
+
+
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void AddOp_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CloseFr3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

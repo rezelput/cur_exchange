@@ -32,10 +32,6 @@ namespace WindowsFormsApp1
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
-            this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.покупкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.продажаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -48,58 +44,34 @@ namespace WindowsFormsApp1
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.cLIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
-            this.dataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cITYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.AddOp = new System.Windows.Forms.ToolStripButton();
+            this.CloseFr3 = new System.Windows.Forms.ToolStripButton();
+            this.dataSet = new WindowsFormsApp1.DataSet();
+            this.tYPEOPERATIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tYPE_OPERATIONTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.TYPE_OPERATIONTableAdapter();
+            this.cURRENCYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cURRENCYTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.CURRENCYTableAdapter();
+            this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uSERSTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.USERSTableAdapter();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet3BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cITYBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tYPEOPERATIONBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSplitButton1});
+            this.AddOp,
+            this.CloseFr3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripSplitButton1
-            // 
-            this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.создатьToolStripMenuItem});
-            this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
-            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
-            this.toolStripSplitButton1.Size = new System.Drawing.Size(78, 22);
-            this.toolStripSplitButton1.Text = "Операция";
-            // 
-            // создатьToolStripMenuItem
-            // 
-            this.создатьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.покупкаToolStripMenuItem,
-            this.продажаToolStripMenuItem});
-            this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.создатьToolStripMenuItem.Text = "Создать";
-            // 
-            // покупкаToolStripMenuItem
-            // 
-            this.покупкаToolStripMenuItem.Name = "покупкаToolStripMenuItem";
-            this.покупкаToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.покупкаToolStripMenuItem.Text = "Покупка";
-            // 
-            // продажаToolStripMenuItem
-            // 
-            this.продажаToolStripMenuItem.Name = "продажаToolStripMenuItem";
-            this.продажаToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.продажаToolStripMenuItem.Text = "Продажа";
             // 
             // groupBox1
             // 
@@ -138,7 +110,6 @@ namespace WindowsFormsApp1
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(138, 20);
             this.dateTimePicker1.TabIndex = 4;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label3
             // 
@@ -167,12 +138,14 @@ namespace WindowsFormsApp1
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.tYPEOPERATIONBindingSource;
+            this.comboBox1.DisplayMember = "NAME";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(433, 61);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 2;
-            this.comboBox1.ValueMember = "ID_T";
+            this.comboBox1.ValueMember = "ID";
             // 
             // label2
             // 
@@ -194,23 +167,25 @@ namespace WindowsFormsApp1
             // 
             // comboBox2
             // 
+            this.comboBox2.DataSource = this.cURRENCYBindingSource;
+            this.comboBox2.DisplayMember = "NAME";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(433, 138);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 5;
-            this.comboBox2.ValueMember = "ID_CUR";
+            this.comboBox2.ValueMember = "ID";
             // 
             // comboBox3
             // 
-            this.comboBox3.DataSource = this.cLIENTBindingSource;
-            this.comboBox3.DisplayMember = "FULLNAME";
+            this.comboBox3.DataSource = this.uSERSBindingSource;
+            this.comboBox3.DisplayMember = "LOGIN";
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(433, 221);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 6;
-            this.comboBox3.ValueMember = "ID_C";
+            this.comboBox3.ValueMember = "ID";
             // 
             // label6
             // 
@@ -221,16 +196,63 @@ namespace WindowsFormsApp1
             this.label6.TabIndex = 7;
             this.label6.Text = "Выбрать клиента ";
             // 
-            // cITYBindingSource
+            // AddOp
             // 
-            this.cITYBindingSource.DataMember = "CITY";
-            this.cITYBindingSource.DataSource = this.dataSet3BindingSource;
+            this.AddOp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.AddOp.Image = ((System.Drawing.Image)(resources.GetObject("AddOp.Image")));
+            this.AddOp.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.AddOp.Name = "AddOp";
+            this.AddOp.Size = new System.Drawing.Size(54, 22);
+            this.AddOp.Text = "Создать";
+            this.AddOp.Click += new System.EventHandler(this.AddOp_Click);
+            // 
+            // CloseFr3
+            // 
+            this.CloseFr3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.CloseFr3.Image = ((System.Drawing.Image)(resources.GetObject("CloseFr3.Image")));
+            this.CloseFr3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CloseFr3.Name = "CloseFr3";
+            this.CloseFr3.Size = new System.Drawing.Size(23, 22);
+            this.CloseFr3.Text = "toolStripButton1";
+            this.CloseFr3.Click += new System.EventHandler(this.CloseFr3_Click);
+            // 
+            // dataSet
+            // 
+            this.dataSet.DataSetName = "DataSet";
+            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tYPEOPERATIONBindingSource
+            // 
+            this.tYPEOPERATIONBindingSource.DataMember = "TYPE_OPERATION";
+            this.tYPEOPERATIONBindingSource.DataSource = this.dataSet;
+            // 
+            // tYPE_OPERATIONTableAdapter
+            // 
+            this.tYPE_OPERATIONTableAdapter.ClearBeforeFill = true;
+            // 
+            // cURRENCYBindingSource
+            // 
+            this.cURRENCYBindingSource.DataMember = "CURRENCY";
+            this.cURRENCYBindingSource.DataSource = this.dataSet;
+            // 
+            // cURRENCYTableAdapter
+            // 
+            this.cURRENCYTableAdapter.ClearBeforeFill = true;
+            // 
+            // uSERSBindingSource
+            // 
+            this.uSERSBindingSource.DataMember = "USERS";
+            this.uSERSBindingSource.DataSource = this.dataSet;
+            // 
+            // uSERSTableAdapter
+            // 
+            this.uSERSTableAdapter.ClearBeforeFill = true;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 397);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
@@ -246,9 +268,10 @@ namespace WindowsFormsApp1
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet3BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cITYBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tYPEOPERATIONBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,10 +280,6 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
-        private System.Windows.Forms.ToolStripMenuItem создатьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem покупкаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem продажаToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
@@ -274,14 +293,18 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.BindingSource dataSet3BindingSource;
-        //private DataSet3 dataSet3;
-        private System.Windows.Forms.BindingSource cITYBindingSource;
-       // private DataSet3TableAdapters.CITYTableAdapter cITYTableAdapter;
-       // private DataSet2 dataSet2;
-        private System.Windows.Forms.BindingSource cLIENTBindingSource;
+        private System.Windows.Forms.ToolStripButton AddOp;
+        private System.Windows.Forms.ToolStripButton CloseFr3;
+        private DataSet dataSet;
+        private System.Windows.Forms.BindingSource tYPEOPERATIONBindingSource;
+        private DataSetTableAdapters.TYPE_OPERATIONTableAdapter tYPE_OPERATIONTableAdapter;
+        private System.Windows.Forms.BindingSource cURRENCYBindingSource;
+        private DataSetTableAdapters.CURRENCYTableAdapter cURRENCYTableAdapter;
+        private System.Windows.Forms.BindingSource uSERSBindingSource;
+        private DataSetTableAdapters.USERSTableAdapter uSERSTableAdapter;
+
         //private DataSet5TableAdapters.CURRENCYTableAdapter cURRENCYTableAdapter;
         //private DataSet4TableAdapters.TYPE_OPTableAdapter tYPE_OPTableAdapter;
-       // private DataSet5 dataSet5;
+        // private DataSet5 dataSet5;
     }
 }
