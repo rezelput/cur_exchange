@@ -37,7 +37,6 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cITYBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -55,22 +54,26 @@ namespace WindowsFormsApp1
             this.CloseFr2 = new System.Windows.Forms.ToolStripButton();
             this.cITYTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.CITYTableAdapter();
             this.uSERSTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.USERSTableAdapter();
+            this.login_box = new System.Windows.Forms.TextBox();
+            this.cOUNTRYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cOUNTRYTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.COUNTRYTableAdapter();
             this.Grp_Add.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cITYBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             this.Grp_Edit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cOUNTRYBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Grp_Add
             // 
+            this.Grp_Add.Controls.Add(this.login_box);
             this.Grp_Add.Controls.Add(this.label5);
             this.Grp_Add.Controls.Add(this.textBox3);
             this.Grp_Add.Controls.Add(this.label3);
             this.Grp_Add.Controls.Add(this.textBox2);
             this.Grp_Add.Controls.Add(this.label2);
-            this.Grp_Add.Controls.Add(this.textBox1);
             this.Grp_Add.Controls.Add(this.label1);
             this.Grp_Add.Controls.Add(this.comboBox1);
             this.Grp_Add.Controls.Add(this.addbtn);
@@ -100,7 +103,7 @@ namespace WindowsFormsApp1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 149);
+            this.label3.Location = new System.Drawing.Point(26, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(148, 13);
             this.label3.TabIndex = 6;
@@ -108,7 +111,7 @@ namespace WindowsFormsApp1
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(25, 165);
+            this.textBox2.Location = new System.Drawing.Point(25, 135);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(141, 20);
             this.textBox2.TabIndex = 5;
@@ -116,36 +119,29 @@ namespace WindowsFormsApp1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 200);
+            this.label2.Location = new System.Drawing.Point(195, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Логин ";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(26, 216);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 20);
-            this.textBox1.TabIndex = 3;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 259);
+            this.label1.Location = new System.Drawing.Point(26, 186);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Выбрать город";
+            this.label1.Text = "Выбрать страну";
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.cITYBindingSource;
+            this.comboBox1.DataSource = this.cOUNTRYBindingSource;
             this.comboBox1.DisplayMember = "NAME";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(26, 278);
+            this.comboBox1.Location = new System.Drawing.Point(26, 205);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(174, 21);
+            this.comboBox1.Size = new System.Drawing.Size(140, 21);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.ValueMember = "ID";
             // 
@@ -195,7 +191,7 @@ namespace WindowsFormsApp1
             // comboBox2
             // 
             this.comboBox2.DataSource = this.uSERSBindingSource;
-            this.comboBox2.DisplayMember = "NAME";
+            this.comboBox2.DisplayMember = "LOGIN";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(28, 106);
             this.comboBox2.Name = "comboBox2";
@@ -246,14 +242,14 @@ namespace WindowsFormsApp1
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // очиститьФормыToolStripMenuItem
             // 
             this.очиститьФормыToolStripMenuItem.Name = "очиститьФормыToolStripMenuItem";
-            this.очиститьФормыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.очиститьФормыToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.очиститьФормыToolStripMenuItem.Text = "Очистить формы";
             this.очиститьФормыToolStripMenuItem.Click += new System.EventHandler(this.очиститьФормыToolStripMenuItem_Click);
             // 
@@ -274,6 +270,22 @@ namespace WindowsFormsApp1
             // uSERSTableAdapter
             // 
             this.uSERSTableAdapter.ClearBeforeFill = true;
+            // 
+            // login_box
+            // 
+            this.login_box.Location = new System.Drawing.Point(198, 96);
+            this.login_box.Name = "login_box";
+            this.login_box.Size = new System.Drawing.Size(97, 20);
+            this.login_box.TabIndex = 9;
+            // 
+            // cOUNTRYBindingSource
+            // 
+            this.cOUNTRYBindingSource.DataMember = "COUNTRY";
+            this.cOUNTRYBindingSource.DataSource = this.dataSet;
+            // 
+            // cOUNTRYTableAdapter
+            // 
+            this.cOUNTRYTableAdapter.ClearBeforeFill = true;
             // 
             // Form2
             // 
@@ -296,6 +308,7 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cOUNTRYBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,7 +325,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox Grp_Edit;
         private System.Windows.Forms.RadioButton updatebtn;
         private System.Windows.Forms.Label label4;
@@ -329,5 +341,8 @@ namespace WindowsFormsApp1
         private DataSetTableAdapters.CITYTableAdapter cITYTableAdapter;
         private System.Windows.Forms.BindingSource uSERSBindingSource;
         private DataSetTableAdapters.USERSTableAdapter uSERSTableAdapter;
+        private System.Windows.Forms.TextBox login_box;
+        private System.Windows.Forms.BindingSource cOUNTRYBindingSource;
+        private DataSetTableAdapters.COUNTRYTableAdapter cOUNTRYTableAdapter;
     }
 }

@@ -29,6 +29,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -36,20 +37,40 @@ namespace WindowsFormsApp1
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientadd_btn = new System.Windows.Forms.ToolStripMenuItem();
             this.opadd_btn = new System.Windows.Forms.ToolStripMenuItem();
-            this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.клиентToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.операцияToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
             this.процедураToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.расчетПродажиВалютыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.dataSet = new WindowsFormsApp1.DataSet();
+            this.oPERATIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oPERATIONTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.OPERATIONTableAdapter();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDTYPEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dATEDDMMYYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oNUMBERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sUMMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDUSERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UpdateDtabtn = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oPERATIONBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.iDTYPEDataGridViewTextBoxColumn,
+            this.dATEDDMMYYDataGridViewTextBoxColumn,
+            this.oNUMBERDataGridViewTextBoxColumn,
+            this.sUMMDataGridViewTextBoxColumn,
+            this.iDUSERDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1});
+            this.dataGridView1.DataSource = this.oPERATIONBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(334, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(435, 410);
@@ -71,8 +92,7 @@ namespace WindowsFormsApp1
             // 
             this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавитьToolStripMenuItem,
-            this.редактироватьToolStripMenuItem});
+            this.добавитьToolStripMenuItem});
             this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
             this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
@@ -85,8 +105,8 @@ namespace WindowsFormsApp1
             this.clientadd_btn,
             this.opadd_btn});
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.добавитьToolStripMenuItem.Text = "Добавить";
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.добавитьToolStripMenuItem.Text = "Добавить/Изменить";
             // 
             // clientadd_btn
             // 
@@ -102,32 +122,12 @@ namespace WindowsFormsApp1
             this.opadd_btn.Text = "Операция";
             this.opadd_btn.Click += new System.EventHandler(this.opadd_btn_Click);
             // 
-            // редактироватьToolStripMenuItem
-            // 
-            this.редактироватьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.клиентToolStripMenuItem1,
-            this.операцияToolStripMenuItem1});
-            this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
-            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.редактироватьToolStripMenuItem.Text = "Редактировать";
-            // 
-            // клиентToolStripMenuItem1
-            // 
-            this.клиентToolStripMenuItem1.Name = "клиентToolStripMenuItem1";
-            this.клиентToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
-            this.клиентToolStripMenuItem1.Text = "Клиент";
-            // 
-            // операцияToolStripMenuItem1
-            // 
-            this.операцияToolStripMenuItem1.Name = "операцияToolStripMenuItem1";
-            this.операцияToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
-            this.операцияToolStripMenuItem1.Text = "Операция";
-            // 
             // toolStripSplitButton2
             // 
             this.toolStripSplitButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripSplitButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.процедураToolStripMenuItem});
+            this.процедураToolStripMenuItem,
+            this.UpdateDtabtn});
             this.toolStripSplitButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton2.Image")));
             this.toolStripSplitButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton2.Name = "toolStripSplitButton2";
@@ -139,7 +139,7 @@ namespace WindowsFormsApp1
             this.процедураToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.расчетПродажиВалютыToolStripMenuItem});
             this.процедураToolStripMenuItem.Name = "процедураToolStripMenuItem";
-            this.процедураToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.процедураToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.процедураToolStripMenuItem.Text = "Процедура";
             // 
             // расчетПродажиВалютыToolStripMenuItem
@@ -158,6 +158,69 @@ namespace WindowsFormsApp1
             this.toolStripButton1.Text = "Выход";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // dataSet
+            // 
+            this.dataSet.DataSetName = "DataSet";
+            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // oPERATIONBindingSource
+            // 
+            this.oPERATIONBindingSource.DataMember = "OPERATION";
+            this.oPERATIONBindingSource.DataSource = this.dataSet;
+            // 
+            // oPERATIONTableAdapter
+            // 
+            this.oPERATIONTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // iDTYPEDataGridViewTextBoxColumn
+            // 
+            this.iDTYPEDataGridViewTextBoxColumn.DataPropertyName = "ID_TYPE";
+            this.iDTYPEDataGridViewTextBoxColumn.HeaderText = "ID_TYPE";
+            this.iDTYPEDataGridViewTextBoxColumn.Name = "iDTYPEDataGridViewTextBoxColumn";
+            // 
+            // dATEDDMMYYDataGridViewTextBoxColumn
+            // 
+            this.dATEDDMMYYDataGridViewTextBoxColumn.DataPropertyName = "DATE_DDMMYY";
+            this.dATEDDMMYYDataGridViewTextBoxColumn.HeaderText = "DATE_DDMMYY";
+            this.dATEDDMMYYDataGridViewTextBoxColumn.Name = "dATEDDMMYYDataGridViewTextBoxColumn";
+            // 
+            // oNUMBERDataGridViewTextBoxColumn
+            // 
+            this.oNUMBERDataGridViewTextBoxColumn.DataPropertyName = "ONUMBER";
+            this.oNUMBERDataGridViewTextBoxColumn.HeaderText = "ONUMBER";
+            this.oNUMBERDataGridViewTextBoxColumn.Name = "oNUMBERDataGridViewTextBoxColumn";
+            // 
+            // sUMMDataGridViewTextBoxColumn
+            // 
+            this.sUMMDataGridViewTextBoxColumn.DataPropertyName = "SUMM";
+            this.sUMMDataGridViewTextBoxColumn.HeaderText = "SUMM";
+            this.sUMMDataGridViewTextBoxColumn.Name = "sUMMDataGridViewTextBoxColumn";
+            // 
+            // iDUSERDataGridViewTextBoxColumn
+            // 
+            this.iDUSERDataGridViewTextBoxColumn.DataPropertyName = "ID_USER";
+            this.iDUSERDataGridViewTextBoxColumn.HeaderText = "ID_USER";
+            this.iDUSERDataGridViewTextBoxColumn.Name = "iDUSERDataGridViewTextBoxColumn";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_CUR";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID_CUR";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // UpdateDtabtn
+            // 
+            this.UpdateDtabtn.Name = "UpdateDtabtn";
+            this.UpdateDtabtn.Size = new System.Drawing.Size(180, 22);
+            this.UpdateDtabtn.Text = "Обновить данные";
+            this.UpdateDtabtn.Click += new System.EventHandler(this.UpdateDtabtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,6 +228,7 @@ namespace WindowsFormsApp1
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CUR_EXCHANGE";
@@ -172,6 +236,8 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oPERATIONBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,9 +251,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientadd_btn;
         private System.Windows.Forms.ToolStripMenuItem opadd_btn;
-        private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem клиентToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem операцияToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
        // private DataSet1TableAdapters.OPERATIONTableAdapter oPERATIONTableAdapter;
@@ -199,6 +262,17 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DataGridViewTextBoxColumn iDCDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem процедураToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem расчетПродажиВалютыToolStripMenuItem;
+        private DataSet dataSet;
+        private System.Windows.Forms.BindingSource oPERATIONBindingSource;
+        private DataSetTableAdapters.OPERATIONTableAdapter oPERATIONTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDTYPEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dATEDDMMYYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oNUMBERDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sUMMDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDUSERDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.ToolStripMenuItem UpdateDtabtn;
     }
 }
 

@@ -20,41 +20,51 @@ namespace WindowsFormsApp1
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet.COUNTRY". При необходимости она может быть перемещена или удалена.
+            this.cOUNTRYTableAdapter.Fill(this.dataSet.COUNTRY);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet.USERS". При необходимости она может быть перемещена или удалена.
             this.uSERSTableAdapter.Fill(this.dataSet.USERS);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet.CITY". При необходимости она может быть перемещена или удалена.
             this.cITYTableAdapter.Fill(this.dataSet.CITY);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet3.CITY". При необходимости она может быть перемещена или удалена.
-            //this.cITYTableAdapter.Fill(this.dataSet3.CITY);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet2.CLIENT". При необходимости она может быть перемещена или удалена.
-            // this.cLIENTTableAdapter.Fill(this.dataSet2.CLIENT);
 
         }
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            const string connectionString = "Data Source = localhost:1521/CUR_exchange; User ID=ADMIN_TT;password=123";
-            string a = textBox2.Text;
-            string b = textBox1.Text;
-            int c = Convert.ToInt32(comboBox1.SelectedValue);
-            int d = Convert.ToInt32(textBox3.Text);
+            const string connectionString = "Data Source = localhost:1521/temp_cur; User ID=SADMIN;password=pwd123";
+            //string a = textBox2.Text;
+            //string b = login_box.Text;
+            //int c = Convert.ToInt32(comboBox1.SelectedValue);
+            //int d = Convert.ToInt32(textBox3.Text);
+            try
+            {
+            int a = Convert.ToInt32(textBox3.Text);
+            string b = login_box.Text;
+            string c = textBox2.Text;
+            int d = Convert.ToInt32(comboBox1.SelectedValue);
             using (System.Data.OracleClient.OracleConnection ConnectionToOracle = new System.Data.OracleClient.OracleConnection(connectionString))
             {
                 System.Data.OracleClient.OracleCommand cmd = new System.Data.OracleClient.OracleCommand();
-                cmd.CommandText = "INSERT INTO CLIENT(FULLNAME,NAME_LOG,ID_CITY, ID_C) VALUES (:a,:b,:c, :d)";
+                cmd.CommandText = "INSERT INTO USERS(ID, LOGIN, NAME, ID_CNTR) VALUES (:a,:b,:c, :d)";
                 cmd.Connection = ConnectionToOracle;
-                cmd.Parameters.Add("a", OracleType.VarChar).Value = a;
+                cmd.Parameters.Add("a", OracleType.Int32).Value = a;
                 cmd.Parameters.Add("b", OracleType.VarChar).Value = b;
-                cmd.Parameters.Add("c", OracleType.Int32).Value = c;
+                cmd.Parameters.Add("c", OracleType.VarChar).Value = c;
                 cmd.Parameters.Add("d", OracleType.Int32).Value = d;
                 ConnectionToOracle.Open();
                 cmd.ExecuteNonQuery();
             }
+            }
+            catch(Exception exp)
+            {
+                MessageBox.Show("Ошибка в обработке события" + exp.Message);
+            }
+            
         }
 
         private void очиститьФормыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            textBox1.Clear();
+           // textBox1.Clear();
             textBox2.Clear();
             textBox3.Clear();
         }
@@ -66,7 +76,7 @@ namespace WindowsFormsApp1
                 comboBox2.Enabled = false;
                 comboBox1.Enabled = true;
 
-                textBox1.Enabled = true;
+                login_box.Enabled = true;
                 textBox2.Enabled = true;
                 textBox3.Enabled = true;
                 updatebtn.Checked = false;
@@ -80,7 +90,7 @@ namespace WindowsFormsApp1
                 comboBox1.Enabled = false;
                 comboBox2.Enabled = true;
                 //выкл
-                textBox1.Enabled = false;
+                login_box.Enabled = false;
                 textBox2.Enabled = false;
                 textBox3.Enabled = false;
 

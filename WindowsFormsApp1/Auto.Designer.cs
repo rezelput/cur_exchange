@@ -74,22 +74,24 @@ namespace WindowsFormsApp1
             // 
             // EnterBtn
             // 
+            this.EnterBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.EnterBtn.Location = new System.Drawing.Point(39, 97);
             this.EnterBtn.Name = "EnterBtn";
             this.EnterBtn.Size = new System.Drawing.Size(87, 24);
             this.EnterBtn.TabIndex = 2;
             this.EnterBtn.Text = "Ок";
-            this.EnterBtn.UseVisualStyleBackColor = true;
+            this.EnterBtn.UseVisualStyleBackColor = false;
             this.EnterBtn.Click += new System.EventHandler(this.EnterBtn_Click);
             // 
             // CancelBtn
             // 
+            this.CancelBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.CancelBtn.Location = new System.Drawing.Point(172, 97);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(87, 24);
             this.CancelBtn.TabIndex = 3;
             this.CancelBtn.Text = "Отмена";
-            this.CancelBtn.UseVisualStyleBackColor = true;
+            this.CancelBtn.UseVisualStyleBackColor = false;
             this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
             // label1
@@ -118,7 +120,7 @@ namespace WindowsFormsApp1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(303, 140);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

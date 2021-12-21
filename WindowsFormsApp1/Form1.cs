@@ -19,6 +19,8 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet.OPERATION". При необходимости она может быть перемещена или удалена.
+            this.oPERATIONTableAdapter.Fill(this.dataSet.OPERATION);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet1.OPERATION". При необходимости она может быть перемещена или удалена.
             //this.oPERATIONTableAdapter.Fill(this.dataSet1.OPERATION);
 
@@ -50,6 +52,11 @@ namespace WindowsFormsApp1
         {
             Form3 f3 = new Form3();
             f3.Show();
+        }
+
+        private void UpdateDtabtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
