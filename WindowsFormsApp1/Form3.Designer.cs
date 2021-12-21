@@ -58,6 +58,8 @@ namespace WindowsFormsApp1
             this.label7 = new System.Windows.Forms.Label();
             this.Sum_cur = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.rus_box = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tYPEOPERATIONBindingSource)).BeginInit();
@@ -261,7 +263,7 @@ namespace WindowsFormsApp1
             // 
             // CurOpSum
             // 
-            this.CurOpSum.Location = new System.Drawing.Point(295, 279);
+            this.CurOpSum.Location = new System.Drawing.Point(302, 224);
             this.CurOpSum.Name = "CurOpSum";
             this.CurOpSum.Size = new System.Drawing.Size(100, 20);
             this.CurOpSum.TabIndex = 7;
@@ -269,7 +271,7 @@ namespace WindowsFormsApp1
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(292, 261);
+            this.label7.Location = new System.Drawing.Point(299, 206);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 13);
             this.label7.TabIndex = 8;
@@ -277,7 +279,7 @@ namespace WindowsFormsApp1
             // 
             // Sum_cur
             // 
-            this.Sum_cur.Location = new System.Drawing.Point(417, 280);
+            this.Sum_cur.Location = new System.Drawing.Point(381, 316);
             this.Sum_cur.Name = "Sum_cur";
             this.Sum_cur.Size = new System.Drawing.Size(89, 31);
             this.Sum_cur.TabIndex = 9;
@@ -289,17 +291,36 @@ namespace WindowsFormsApp1
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(294, 313);
+            this.label8.Location = new System.Drawing.Point(378, 281);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 16);
+            this.label8.Size = new System.Drawing.Size(52, 16);
             this.label8.TabIndex = 10;
+            this.label8.Text = "@курс";
             this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // rus_box
+            // 
+            this.rus_box.Location = new System.Drawing.Point(302, 277);
+            this.rus_box.Name = "rus_box";
+            this.rus_box.Size = new System.Drawing.Size(62, 20);
+            this.rus_box.TabIndex = 11;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(302, 260);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 13);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "В рубл";
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 397);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.rus_box);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.Sum_cur);
             this.Controls.Add(this.groupBox1);
@@ -352,6 +373,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox CurOpSum;
         private System.Windows.Forms.Button Sum_cur;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox rus_box;
+        private System.Windows.Forms.Label label9;
 
         //private DataSet5TableAdapters.CURRENCYTableAdapter cURRENCYTableAdapter;
         //private DataSet4TableAdapters.TYPE_OPTableAdapter tYPE_OPTableAdapter;

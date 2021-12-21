@@ -41,18 +41,19 @@ namespace WindowsFormsApp1
                 int id_type = Convert.ToInt32(typeop_box.SelectedValue);
                 string dateyy = Convert.ToString(date);
                 string num = opnum.Text;
-                //string sum = ;
+                string sum = CurOpSum.Text;
                 int id_user = Convert.ToInt32(UsBox.SelectedValue);
                 int id_cur = Convert.ToInt32(changeCur.SelectedValue);
                 using (System.Data.OracleClient.OracleConnection ConnectionToOracle = new System.Data.OracleClient.OracleConnection(connectionString))
                 {
                     System.Data.OracleClient.OracleCommand cmd = new System.Data.OracleClient.OracleCommand();
-                    cmd.CommandText = "INSERT INTO OPERATION(ID, ID_TYPE, DATE_DDMMYY,ONUMBER,ID_USER, ID_CUR  ) VALUES (:id,:id_type,:dateyy, :num,:id_user, :id_cur)";
+                    cmd.CommandText = "INSERT INTO OPERATION(ID, ID_TYPE, DATE_DDMMYY,ONUMBER,SUMM,ID_USER, ID_CUR  ) VALUES (:id,:id_type,:dateyy, :num,:sum,:id_user, :id_cur)";
                     cmd.Connection = ConnectionToOracle;
                     cmd.Parameters.Add("id", OracleType.Int32).Value = id;
                     cmd.Parameters.Add("id_type", OracleType.Int32).Value = id_type;
                     cmd.Parameters.Add("dateyy", OracleType.VarChar).Value = dateyy;
                     cmd.Parameters.Add("num", OracleType.VarChar).Value = num;
+                    cmd.Parameters.Add("sum", OracleType.VarChar).Value = sum;
                     cmd.Parameters.Add("id_user", OracleType.Int32).Value = id_user;
                     cmd.Parameters.Add("id_cur", OracleType.Int32).Value = id_cur;
                     ConnectionToOracle.Open();
@@ -78,7 +79,7 @@ namespace WindowsFormsApp1
 
         private void Sum_cur_Click(object sender, EventArgs e)
         {
-
+            CurOpSum.Text = Convert.ToString(Convert.ToInt32(label8.Text) * Convert.ToInt32(rus_box.Text));
         }
 
         private void changeCur_SelectedIndexChanged(object sender, EventArgs e)
