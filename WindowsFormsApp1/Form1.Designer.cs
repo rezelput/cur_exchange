@@ -48,7 +48,7 @@ namespace WindowsFormsApp1
             this.opadd_btn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
             this.процедураToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.расчетПродажиВалютыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.analyst_op = new System.Windows.Forms.ToolStripMenuItem();
             this.UpdateDtabtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.oPERATIONTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.OPERATIONTableAdapter();
@@ -71,9 +71,9 @@ namespace WindowsFormsApp1
             this.iDUSERDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn1});
             this.dataGridView1.DataSource = this.oPERATIONBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(334, 28);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 45);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(435, 410);
+            this.dataGridView1.Size = new System.Drawing.Size(757, 380);
             this.dataGridView1.TabIndex = 0;
             // 
             // iDDataGridViewTextBoxColumn
@@ -189,21 +189,21 @@ namespace WindowsFormsApp1
             // процедураToolStripMenuItem
             // 
             this.процедураToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.расчетПродажиВалютыToolStripMenuItem});
+            this.analyst_op});
             this.процедураToolStripMenuItem.Name = "процедураToolStripMenuItem";
-            this.процедураToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.процедураToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.процедураToolStripMenuItem.Text = "Процедура";
             // 
-            // расчетПродажиВалютыToolStripMenuItem
+            // analyst_op
             // 
-            this.расчетПродажиВалютыToolStripMenuItem.Name = "расчетПродажиВалютыToolStripMenuItem";
-            this.расчетПродажиВалютыToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.расчетПродажиВалютыToolStripMenuItem.Text = "Расчет продажи валюты";
+            this.analyst_op.Name = "analyst_op";
+            this.analyst_op.Size = new System.Drawing.Size(180, 22);
+            this.analyst_op.Text = "Анализ операций";
             // 
             // UpdateDtabtn
             // 
             this.UpdateDtabtn.Name = "UpdateDtabtn";
-            this.UpdateDtabtn.Size = new System.Drawing.Size(172, 22);
+            this.UpdateDtabtn.Size = new System.Drawing.Size(180, 22);
             this.UpdateDtabtn.Text = "Обновить данные";
             this.UpdateDtabtn.Click += new System.EventHandler(this.UpdateDtabtn_Click);
             // 
@@ -261,7 +261,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DataGridViewTextBoxColumn iDCURDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDCDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem процедураToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem расчетПродажиВалютыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem analyst_op;
         private DataSet dataSet;
         private System.Windows.Forms.BindingSource oPERATIONBindingSource;
         private DataSetTableAdapters.OPERATIONTableAdapter oPERATIONTableAdapter;
