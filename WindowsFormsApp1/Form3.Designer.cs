@@ -60,12 +60,14 @@ namespace WindowsFormsApp1
             this.label8 = new System.Windows.Forms.Label();
             this.rus_box = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tYPEOPERATIONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -75,7 +77,7 @@ namespace WindowsFormsApp1
             this.CloseFr3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(591, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -263,7 +265,7 @@ namespace WindowsFormsApp1
             // 
             // CurOpSum
             // 
-            this.CurOpSum.Location = new System.Drawing.Point(302, 224);
+            this.CurOpSum.Location = new System.Drawing.Point(23, 47);
             this.CurOpSum.Name = "CurOpSum";
             this.CurOpSum.Size = new System.Drawing.Size(100, 20);
             this.CurOpSum.TabIndex = 7;
@@ -271,7 +273,7 @@ namespace WindowsFormsApp1
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(299, 206);
+            this.label7.Location = new System.Drawing.Point(20, 29);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 13);
             this.label7.TabIndex = 8;
@@ -279,7 +281,7 @@ namespace WindowsFormsApp1
             // 
             // Sum_cur
             // 
-            this.Sum_cur.Location = new System.Drawing.Point(381, 316);
+            this.Sum_cur.Location = new System.Drawing.Point(173, 145);
             this.Sum_cur.Name = "Sum_cur";
             this.Sum_cur.Size = new System.Drawing.Size(89, 31);
             this.Sum_cur.TabIndex = 9;
@@ -291,7 +293,7 @@ namespace WindowsFormsApp1
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(378, 281);
+            this.label8.Location = new System.Drawing.Point(91, 101);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 16);
             this.label8.TabIndex = 10;
@@ -300,7 +302,7 @@ namespace WindowsFormsApp1
             // 
             // rus_box
             // 
-            this.rus_box.Location = new System.Drawing.Point(302, 277);
+            this.rus_box.Location = new System.Drawing.Point(23, 100);
             this.rus_box.Name = "rus_box";
             this.rus_box.Size = new System.Drawing.Size(62, 20);
             this.rus_box.TabIndex = 11;
@@ -308,25 +310,35 @@ namespace WindowsFormsApp1
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(302, 260);
+            this.label9.Location = new System.Drawing.Point(23, 83);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 12;
             this.label9.Text = "В рубл";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.Sum_cur);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.CurOpSum);
+            this.groupBox2.Controls.Add(this.rus_box);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Location = new System.Drawing.Point(309, 201);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(268, 184);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Сумма операции";
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 397);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.rus_box);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.Sum_cur);
+            this.ClientSize = new System.Drawing.Size(591, 397);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.CurOpSum);
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ДОБАВИТЬ ОПЕРАЦИЮ";
@@ -339,6 +351,8 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,6 +389,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox rus_box;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox groupBox2;
 
         //private DataSet5TableAdapters.CURRENCYTableAdapter cURRENCYTableAdapter;
         //private DataSet4TableAdapters.TYPE_OPTableAdapter tYPE_OPTableAdapter;
