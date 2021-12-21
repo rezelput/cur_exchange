@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.клиентToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientadd_btn = new System.Windows.Forms.ToolStripMenuItem();
             this.операцияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.клиентToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,23 +82,23 @@ namespace WindowsFormsApp1
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.клиентToolStripMenuItem,
+            this.clientadd_btn,
             this.операцияToolStripMenuItem});
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить";
             // 
-            // клиентToolStripMenuItem
+            // clientadd_btn
             // 
-            this.клиентToolStripMenuItem.Name = "клиентToolStripMenuItem";
-            this.клиентToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
-            this.клиентToolStripMenuItem.Text = "Клиент";
-            this.клиентToolStripMenuItem.Click += new System.EventHandler(this.клиентToolStripMenuItem_Click);
+            this.clientadd_btn.Name = "clientadd_btn";
+            this.clientadd_btn.Size = new System.Drawing.Size(180, 22);
+            this.clientadd_btn.Text = "Клиент";
+            this.clientadd_btn.Click += new System.EventHandler(this.клиентToolStripMenuItem_Click);
             // 
             // операцияToolStripMenuItem
             // 
             this.операцияToolStripMenuItem.Name = "операцияToolStripMenuItem";
-            this.операцияToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.операцияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.операцияToolStripMenuItem.Text = "Операция";
             // 
             // редактироватьToolStripMenuItem
@@ -107,7 +107,7 @@ namespace WindowsFormsApp1
             this.клиентToolStripMenuItem1,
             this.операцияToolStripMenuItem1});
             this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
-            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.редактироватьToolStripMenuItem.Text = "Редактировать";
             // 
             // клиентToolStripMenuItem1
@@ -181,7 +181,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem клиентToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientadd_btn;
         private System.Windows.Forms.ToolStripMenuItem операцияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem клиентToolStripMenuItem1;

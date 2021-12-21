@@ -29,6 +29,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,9 +50,17 @@ namespace WindowsFormsApp1
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.очиститьФормыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.dataSet = new WindowsFormsApp1.DataSet();
+            this.cITYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cITYTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.CITYTableAdapter();
+            this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uSERSTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.USERSTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cITYBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -131,12 +140,14 @@ namespace WindowsFormsApp1
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.cITYBindingSource;
+            this.comboBox1.DisplayMember = "NAME";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(26, 278);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(174, 21);
             this.comboBox1.TabIndex = 1;
-            this.comboBox1.ValueMember = "CITY_ID";
+            this.comboBox1.ValueMember = "ID";
             // 
             // radioButton1
             // 
@@ -172,12 +183,14 @@ namespace WindowsFormsApp1
             // 
             // comboBox2
             // 
+            this.comboBox2.DataSource = this.uSERSBindingSource;
+            this.comboBox2.DisplayMember = "NAME";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(28, 106);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(151, 21);
             this.comboBox2.TabIndex = 1;
-            this.comboBox2.ValueMember = "ID_C";
+            this.comboBox2.ValueMember = "ID";
             // 
             // radioButton2
             // 
@@ -235,6 +248,29 @@ namespace WindowsFormsApp1
             this.toolStripButton1.Size = new System.Drawing.Size(57, 22);
             this.toolStripButton1.Text = "Закрыть";
             // 
+            // dataSet
+            // 
+            this.dataSet.DataSetName = "DataSet";
+            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cITYBindingSource
+            // 
+            this.cITYBindingSource.DataMember = "CITY";
+            this.cITYBindingSource.DataSource = this.dataSet;
+            // 
+            // cITYTableAdapter
+            // 
+            this.cITYTableAdapter.ClearBeforeFill = true;
+            // 
+            // uSERSBindingSource
+            // 
+            this.uSERSBindingSource.DataMember = "USERS";
+            this.uSERSBindingSource.DataSource = this.dataSet;
+            // 
+            // uSERSTableAdapter
+            // 
+            this.uSERSTableAdapter.ClearBeforeFill = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,6 +288,9 @@ namespace WindowsFormsApp1
             this.groupBox2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cITYBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,5 +319,10 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox3;
+        private DataSet dataSet;
+        private System.Windows.Forms.BindingSource cITYBindingSource;
+        private DataSetTableAdapters.CITYTableAdapter cITYTableAdapter;
+        private System.Windows.Forms.BindingSource uSERSBindingSource;
+        private DataSetTableAdapters.USERSTableAdapter uSERSTableAdapter;
     }
 }

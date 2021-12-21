@@ -20,10 +20,14 @@ namespace WindowsFormsApp1
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet.USERS". При необходимости она может быть перемещена или удалена.
+            this.uSERSTableAdapter.Fill(this.dataSet.USERS);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet.CITY". При необходимости она может быть перемещена или удалена.
+            this.cITYTableAdapter.Fill(this.dataSet.CITY);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet3.CITY". При необходимости она может быть перемещена или удалена.
             //this.cITYTableAdapter.Fill(this.dataSet3.CITY);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet2.CLIENT". При необходимости она может быть перемещена или удалена.
-           // this.cLIENTTableAdapter.Fill(this.dataSet2.CLIENT);
+            // this.cLIENTTableAdapter.Fill(this.dataSet2.CLIENT);
 
         }
 

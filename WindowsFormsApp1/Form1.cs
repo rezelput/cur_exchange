@@ -35,7 +35,8 @@ namespace WindowsFormsApp1
 
         private void клиентToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form2 f2 = new Form2();
+            f2.Hide();
         }
 
         private void oPERATIONBindingSource_CurrentChanged(object sender, EventArgs e)
