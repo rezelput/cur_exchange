@@ -71,9 +71,9 @@ namespace WindowsFormsApp1
             this.iDUSERDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn1});
             this.dataGridView1.DataSource = this.oPERATIONBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 45);
+            this.dataGridView1.Location = new System.Drawing.Point(334, 43);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(757, 380);
+            this.dataGridView1.Size = new System.Drawing.Size(445, 382);
             this.dataGridView1.TabIndex = 0;
             // 
             // iDDataGridViewTextBoxColumn
@@ -191,19 +191,19 @@ namespace WindowsFormsApp1
             this.процедураToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.analyst_op});
             this.процедураToolStripMenuItem.Name = "процедураToolStripMenuItem";
-            this.процедураToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.процедураToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.процедураToolStripMenuItem.Text = "Процедура";
             // 
             // analyst_op
             // 
             this.analyst_op.Name = "analyst_op";
-            this.analyst_op.Size = new System.Drawing.Size(180, 22);
+            this.analyst_op.Size = new System.Drawing.Size(171, 22);
             this.analyst_op.Text = "Анализ операций";
             // 
             // UpdateDtabtn
             // 
             this.UpdateDtabtn.Name = "UpdateDtabtn";
-            this.UpdateDtabtn.Size = new System.Drawing.Size(180, 22);
+            this.UpdateDtabtn.Size = new System.Drawing.Size(172, 22);
             this.UpdateDtabtn.Text = "Обновить данные";
             this.UpdateDtabtn.Click += new System.EventHandler(this.UpdateDtabtn_Click);
             // 
