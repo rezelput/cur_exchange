@@ -191,14 +191,15 @@ namespace WindowsFormsApp1
             this.процедураToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.analyst_op});
             this.процедураToolStripMenuItem.Name = "процедураToolStripMenuItem";
-            this.процедураToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.процедураToolStripMenuItem.Text = "Процедура";
+            this.процедураToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.процедураToolStripMenuItem.Text = "Отчет";
             // 
             // analyst_op
             // 
             this.analyst_op.Name = "analyst_op";
-            this.analyst_op.Size = new System.Drawing.Size(171, 22);
+            this.analyst_op.Size = new System.Drawing.Size(180, 22);
             this.analyst_op.Text = "Анализ операций";
+            this.analyst_op.Click += new System.EventHandler(this.analyst_op_Click);
             // 
             // UpdateDtabtn
             // 
