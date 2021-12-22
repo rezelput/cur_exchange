@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OracleClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,10 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+
+        const string SqlConn = "Data Source = localhost:1521/temp_cur; User ID=SADMIN;password=pwd123";
+        DataTable dt = new DataTable();
+        private BindingSource bindingSource1 = new BindingSource();
         public Form1()
         {
             InitializeComponent();
@@ -19,8 +24,15 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            connectionString = new OracleConnection("Data Source = localhost:1521/temp_cur; User ID=SADMIN;password=pwd123");
+            connectionString.Open();
+            DataSet ds = new DataSet();
+            dataAdapter = new OracleDataAdapter("SELECT ID,ID_TYPE,DATE_DDMMYY,ONUMBER,SUMM,ID_USER,ID_CUR FROM OPERATION", connectionString);
+            table = new DataTable();
+            dataAdapter.Fill(table);
+            dataGridView1.DataSource = table;
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet.OPERATION". При необходимости она может быть перемещена или удалена.
-            this.oPERATIONTableAdapter.Fill(this.dataSet.OPERATION);
+            //this.oPERATIONTableAdapter.Fill(this.dataSet.OPERATION);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet1.OPERATION". При необходимости она может быть перемещена или удалена.
             //this.oPERATIONTableAdapter.Fill(this.dataSet1.OPERATION);
 
@@ -56,29 +68,34 @@ namespace WindowsFormsApp1
 
         private void UpdateDtabtn_Click(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = bindingSource1;
             GetData(null);
         }
 
-        const string connectionString = "Data Source = localhost:1521/temp_cur; User ID=SADMIN;password=pwd123";
-        DataTable dt = new DataTable();
-
+        private OracleConnection connectionString = null;
+        private OracleDataAdapter dataAdapter = null;
+        private DataTable table = null;
         private void GetData(string selectCommand)
         {
-            using (System.Data.OracleClient.OracleConnection ConnectionToOracle = new System.Data.OracleClient.OracleConnection(connectionString))
+            try
             {
-                DataSet ds = new DataSet();
-                System.Data.OracleClient.OracleDataAdapter dataAdapter = new System.Data.OracleClient.OracleDataAdapter("SELECT * FROM OPERATION", connectionString);
+                table.Clear();
 
-                ConnectionToOracle.Open();
-                dataAdapter.Fill(ds);
-                dt = ds.Tables[0];
-                dataGridView1.DataSource = dt;
-                ConnectionToOracle.Close();
+                dataAdapter.Fill(table);
+                dataGridView1.DataSource = table;
+
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ошибка обработки" + ex);
+            }
+            
         }
 
         private void analyst_op_Click(object sender, EventArgs e)
         {
+            try
+            {
             Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook ExcelWorkBook;
             Microsoft.Office.Interop.Excel.Worksheet ExcelWorkSheet;
@@ -97,6 +114,14 @@ namespace WindowsFormsApp1
             //Вызываем нашу созданную эксельку.
             ExcelApp.Visible = true;
             ExcelApp.UserControl = true;
+            //Сообщение
+            MessageBox.Show("Отчет создан");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex);
+            }
+            
         }
     }
 }

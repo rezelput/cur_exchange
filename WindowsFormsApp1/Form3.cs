@@ -58,6 +58,8 @@ namespace WindowsFormsApp1
                     cmd.Parameters.Add("id_cur", OracleType.Int32).Value = id_cur;
                     ConnectionToOracle.Open();
                     cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Операция создана");
                 }
             }
             catch (Exception exp)
