@@ -56,7 +56,25 @@ namespace WindowsFormsApp1
 
         private void UpdateDtabtn_Click(object sender, EventArgs e)
         {
+            GetData(null);
+        }
 
+        const string connectionString = "Data Source = localhost:1521/temp_cur; User ID=SADMIN;password=pwd123";
+        DataTable dt = new DataTable();
+
+        private void GetData(string selectCommand)
+        {
+            using (System.Data.OracleClient.OracleConnection ConnectionToOracle = new System.Data.OracleClient.OracleConnection(connectionString))
+            {
+                DataSet ds = new DataSet();
+                System.Data.OracleClient.OracleDataAdapter dataAdapter = new System.Data.OracleClient.OracleDataAdapter("SELECT * FROM OPERATION", connectionString);
+
+                ConnectionToOracle.Open();
+                dataAdapter.Fill(ds);
+                dt = ds.Tables[0];
+                dataGridView1.DataSource = dt;
+                ConnectionToOracle.Close();
+            }
         }
     }
 }
