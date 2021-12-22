@@ -79,7 +79,7 @@ namespace WindowsFormsApp1
 
         private void Sum_cur_Click(object sender, EventArgs e)
         {
-            CurOpSum.Text = Convert.ToString(Convert.ToInt32(label8.Text) * Convert.ToInt32(rus_box.Text));
+            CurOpSum.Text = Convert.ToString(Convert.ToInt32(curruncy.Text) * Convert.ToInt32(rus_box.Text));
         }
 
         private void changeCur_SelectedIndexChanged(object sender, EventArgs e)
@@ -90,15 +90,28 @@ namespace WindowsFormsApp1
                 //string name = com.ExecuteScalar().ToString();
                 try
                 {
+                    /*
+                    string dd = curruncy.Text;//Convert.ToString(changeCur.SelectedValue);//curruncy.Text;
                     System.Data.OracleClient.OracleCommand com = new System.Data.OracleClient.OracleCommand();
-                    com.CommandText = "SELECT VALUES FROM CURRENCY WHERE ID=:dd";
-                    com.Parameters.AddWithValue("dd", Convert.ToInt32(changeCur.SelectedValue));
+                    com.CommandText = "SELECT VALUES_SUM FROM CURRENCY WHERE ID=:dd";
+                    //com.Parameters.AddWithValue("dd", changeCur.SelectedValue);
                     com.Connection = ConnectionToOracle;
-                    
-                    //label8.Text = name;
-                    com.Parameters.Add(new OracleParameter("dd", label8.Text));
+                    //com.Parameters.Add(new OracleParameter("dd", label8.Text));
+                    com.Parameters.Add("dd", OracleType.VarChar).Value = dd;
                     ConnectionToOracle.Open();
                     com.ExecuteNonQuery();
+                    */
+                    System.Data.OracleClient.OracleCommand com = new System.Data.OracleClient.OracleCommand();
+                    //com = connectionString.CreateCommand();
+                    com.Connection = ConnectionToOracle;
+                    com.CommandText = "SELECT VALUES_SUM FROM CURRENCY WHERE ID=:dd";
+                    ConnectionToOracle.Open();
+                    System.Data.OracleClient.OracleDataReader reader = com.ExecuteReader();
+                    changeCur.Text = " ";
+                    while (reader.Read())
+                    {
+                        label8.Text = reader.GetValue(3).ToString();
+                    }
                 }
                 catch (Exception exp)
                 {

@@ -31,16 +31,16 @@ namespace WindowsFormsApp1
         {
             this.components = new System.ComponentModel.Container();
             this.usersbox = new System.Windows.Forms.ComboBox();
-            this.sTAFFBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet = new WindowsFormsApp1.DataSet();
             this.pswrd = new System.Windows.Forms.TextBox();
             this.EnterBtn = new System.Windows.Forms.Button();
             this.CancelBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dataSet = new WindowsFormsApp1.DataSet();
+            this.sTAFFBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sTAFFTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.STAFFTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // usersbox
@@ -53,16 +53,6 @@ namespace WindowsFormsApp1
             this.usersbox.Size = new System.Drawing.Size(142, 22);
             this.usersbox.TabIndex = 0;
             this.usersbox.ValueMember = "LOGIN";
-            // 
-            // sTAFFBindingSource
-            // 
-            this.sTAFFBindingSource.DataMember = "STAFF";
-            this.sTAFFBindingSource.DataSource = this.dataSet;
-            // 
-            // dataSet
-            // 
-            this.dataSet.DataSetName = "DataSet";
-            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pswrd
             // 
@@ -112,6 +102,16 @@ namespace WindowsFormsApp1
             this.label2.TabIndex = 5;
             this.label2.Text = "Пароль";
             // 
+            // dataSet
+            // 
+            this.dataSet.DataSetName = "DataSet";
+            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sTAFFBindingSource
+            // 
+            this.sTAFFBindingSource.DataMember = "STAFF";
+            this.sTAFFBindingSource.DataSource = this.dataSet;
+            // 
             // sTAFFTableAdapter
             // 
             this.sTAFFTableAdapter.ClearBeforeFill = true;
@@ -135,8 +135,8 @@ namespace WindowsFormsApp1
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Auto";
             this.Load += new System.EventHandler(this.Auto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

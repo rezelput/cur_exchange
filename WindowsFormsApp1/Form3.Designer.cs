@@ -35,38 +35,39 @@ namespace WindowsFormsApp1
             this.AddOp = new System.Windows.Forms.ToolStripButton();
             this.CloseFr3 = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.UsBox = new System.Windows.Forms.ComboBox();
+            this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet = new WindowsFormsApp1.DataSet();
+            this.changeCur = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.opnum = new System.Windows.Forms.TextBox();
             this.date = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.id_op = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.typeop_box = new System.Windows.Forms.ComboBox();
             this.tYPEOPERATIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet = new WindowsFormsApp1.DataSet();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.changeCur = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.id_op = new System.Windows.Forms.TextBox();
             this.cURRENCYBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.UsBox = new System.Windows.Forms.ComboBox();
-            this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label6 = new System.Windows.Forms.Label();
             this.tYPE_OPERATIONTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.TYPE_OPERATIONTableAdapter();
             this.cURRENCYTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.CURRENCYTableAdapter();
             this.uSERSTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.USERSTableAdapter();
             this.CurOpSum = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.Sum_cur = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.curruncy = new System.Windows.Forms.Label();
             this.rus_box = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tYPEOPERATIONBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tYPEOPERATIONBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,6 +123,48 @@ namespace WindowsFormsApp1
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Добавить данные операции";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 274);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(98, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Выбрать клиента ";
+            // 
+            // UsBox
+            // 
+            this.UsBox.DataSource = this.uSERSBindingSource;
+            this.UsBox.DisplayMember = "LOGIN";
+            this.UsBox.FormattingEnabled = true;
+            this.UsBox.Location = new System.Drawing.Point(31, 290);
+            this.UsBox.Name = "UsBox";
+            this.UsBox.Size = new System.Drawing.Size(121, 21);
+            this.UsBox.TabIndex = 6;
+            this.UsBox.ValueMember = "ID";
+            // 
+            // uSERSBindingSource
+            // 
+            this.uSERSBindingSource.DataMember = "USERS";
+            this.uSERSBindingSource.DataSource = this.dataSet;
+            // 
+            // dataSet
+            // 
+            this.dataSet.DataSetName = "DataSet";
+            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // changeCur
+            // 
+            this.changeCur.DataSource = this.cURRENCYBindingSource;
+            this.changeCur.DisplayMember = "NAME";
+            this.changeCur.FormattingEnabled = true;
+            this.changeCur.Location = new System.Drawing.Point(28, 238);
+            this.changeCur.Name = "changeCur";
+            this.changeCur.Size = new System.Drawing.Size(121, 21);
+            this.changeCur.TabIndex = 5;
+            this.changeCur.ValueMember = "VALUES_SUM";
+            this.changeCur.SelectedIndexChanged += new System.EventHandler(this.changeCur_SelectedIndexChanged);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -130,6 +173,15 @@ namespace WindowsFormsApp1
             this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Номер операции";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(31, 219);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Выбрать Валюту";
             // 
             // opnum
             // 
@@ -154,21 +206,14 @@ namespace WindowsFormsApp1
             this.label3.TabIndex = 3;
             this.label3.Text = "Дата операции";
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ID";
-            // 
-            // id_op
-            // 
-            this.id_op.Location = new System.Drawing.Point(31, 59);
-            this.id_op.Name = "id_op";
-            this.id_op.Size = new System.Drawing.Size(57, 20);
-            this.id_op.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(111, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Тип операции";
             // 
             // typeop_box
             // 
@@ -186,70 +231,26 @@ namespace WindowsFormsApp1
             this.tYPEOPERATIONBindingSource.DataMember = "TYPE_OPERATION";
             this.tYPEOPERATIONBindingSource.DataSource = this.dataSet;
             // 
-            // dataSet
+            // label1
             // 
-            this.dataSet.DataSetName = "DataSet";
-            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "ID";
             // 
-            // label2
+            // id_op
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(111, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Тип операции";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 219);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Выбрать Валюту";
-            // 
-            // changeCur
-            // 
-            this.changeCur.DataSource = this.cURRENCYBindingSource;
-            this.changeCur.DisplayMember = "NAME";
-            this.changeCur.FormattingEnabled = true;
-            this.changeCur.Location = new System.Drawing.Point(28, 238);
-            this.changeCur.Name = "changeCur";
-            this.changeCur.Size = new System.Drawing.Size(121, 21);
-            this.changeCur.TabIndex = 5;
-            this.changeCur.ValueMember = "ID";
-            this.changeCur.SelectedIndexChanged += new System.EventHandler(this.changeCur_SelectedIndexChanged);
+            this.id_op.Location = new System.Drawing.Point(31, 59);
+            this.id_op.Name = "id_op";
+            this.id_op.Size = new System.Drawing.Size(57, 20);
+            this.id_op.TabIndex = 0;
             // 
             // cURRENCYBindingSource
             // 
             this.cURRENCYBindingSource.DataMember = "CURRENCY";
             this.cURRENCYBindingSource.DataSource = this.dataSet;
-            // 
-            // UsBox
-            // 
-            this.UsBox.DataSource = this.uSERSBindingSource;
-            this.UsBox.DisplayMember = "LOGIN";
-            this.UsBox.FormattingEnabled = true;
-            this.UsBox.Location = new System.Drawing.Point(31, 290);
-            this.UsBox.Name = "UsBox";
-            this.UsBox.Size = new System.Drawing.Size(121, 21);
-            this.UsBox.TabIndex = 6;
-            this.UsBox.ValueMember = "ID";
-            // 
-            // uSERSBindingSource
-            // 
-            this.uSERSBindingSource.DataMember = "USERS";
-            this.uSERSBindingSource.DataSource = this.dataSet;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 274);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Выбрать клиента ";
             // 
             // tYPE_OPERATIONTableAdapter
             // 
@@ -289,16 +290,16 @@ namespace WindowsFormsApp1
             this.Sum_cur.UseVisualStyleBackColor = true;
             this.Sum_cur.Click += new System.EventHandler(this.Sum_cur_Click);
             // 
-            // label8
+            // curruncy
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(91, 101);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 16);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "@курс";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.curruncy.AutoSize = true;
+            this.curruncy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.curruncy.Location = new System.Drawing.Point(306, 51);
+            this.curruncy.Name = "curruncy";
+            this.curruncy.Size = new System.Drawing.Size(106, 13);
+            this.curruncy.TabIndex = 10;
+            this.curruncy.Text = "Курс валюты, (1:1) :";
+            this.curruncy.Click += new System.EventHandler(this.label8_Click);
             // 
             // rus_box
             // 
@@ -323,7 +324,6 @@ namespace WindowsFormsApp1
             this.groupBox2.Controls.Add(this.CurOpSum);
             this.groupBox2.Controls.Add(this.rus_box);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(309, 201);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(268, 184);
@@ -331,14 +331,25 @@ namespace WindowsFormsApp1
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Сумма операции";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(418, 51);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 13);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "@курс";
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 397);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.curruncy);
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ДОБАВИТЬ ОПЕРАЦИЮ";
@@ -347,10 +358,10 @@ namespace WindowsFormsApp1
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tYPEOPERATIONBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tYPEOPERATIONBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -386,10 +397,11 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox CurOpSum;
         private System.Windows.Forms.Button Sum_cur;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label curruncy;
         private System.Windows.Forms.TextBox rus_box;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label8;
 
         //private DataSet5TableAdapters.CURRENCYTableAdapter cURRENCYTableAdapter;
         //private DataSet4TableAdapters.TYPE_OPTableAdapter tYPE_OPTableAdapter;

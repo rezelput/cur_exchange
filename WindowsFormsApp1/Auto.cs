@@ -21,6 +21,10 @@ namespace WindowsFormsApp1
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet.STAFF". При необходимости она может быть перемещена или удалена.
             this.sTAFFTableAdapter.Fill(this.dataSet.STAFF);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "updateCurrency.STAFF". При необходимости она может быть перемещена или удалена.
+            // this.sTAFFTableAdapter1.Fill(this.updateCurrency.STAFF);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet.STAFF". При необходимости она может быть перемещена или удалена.
+            //this.sTAFFTableAdapter.Fill(this.dataSet.STAFF);
         }
 
         private void EnterBtn_Click(object sender, EventArgs e)
