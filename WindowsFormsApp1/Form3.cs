@@ -87,36 +87,6 @@ namespace WindowsFormsApp1
             using (System.Data.OracleClient.OracleConnection ConnectionToOracle = new System.Data.OracleClient.OracleConnection(connectionString))
             {
                 
-                //string name = com.ExecuteScalar().ToString();
-                try
-                {
-                    /*
-                    string dd = curruncy.Text;//Convert.ToString(changeCur.SelectedValue);//curruncy.Text;
-                    System.Data.OracleClient.OracleCommand com = new System.Data.OracleClient.OracleCommand();
-                    com.CommandText = "SELECT VALUES_SUM FROM CURRENCY WHERE ID=:dd";
-                    //com.Parameters.AddWithValue("dd", changeCur.SelectedValue);
-                    com.Connection = ConnectionToOracle;
-                    //com.Parameters.Add(new OracleParameter("dd", label8.Text));
-                    com.Parameters.Add("dd", OracleType.VarChar).Value = dd;
-                    ConnectionToOracle.Open();
-                    com.ExecuteNonQuery();
-                    */
-                    System.Data.OracleClient.OracleCommand com = new System.Data.OracleClient.OracleCommand();
-                    //com = connectionString.CreateCommand();
-                    com.Connection = ConnectionToOracle;
-                    com.CommandText = "SELECT VALUES_SUM FROM CURRENCY WHERE ID=:dd";
-                    ConnectionToOracle.Open();
-                    System.Data.OracleClient.OracleDataReader reader = com.ExecuteReader();
-                    changeCur.Text = " ";
-                    while (reader.Read())
-                    {
-                        label8.Text = reader.GetValue(3).ToString();
-                    }
-                }
-                catch (Exception exp)
-                {
-                    MessageBox.Show("Ошибка в обработке события" + exp.Message);
-                }
             }
         }
     }

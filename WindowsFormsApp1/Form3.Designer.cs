@@ -194,7 +194,7 @@ namespace WindowsFormsApp1
             // 
             // date
             // 
-            this.date.Location = new System.Drawing.Point(28, 120);
+            this.date.Location = new System.Drawing.Point(31, 120);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(204, 20);
             this.date.TabIndex = 4;
