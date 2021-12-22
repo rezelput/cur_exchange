@@ -40,6 +40,7 @@ namespace WindowsFormsApp1
             this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet = new WindowsFormsApp1.DataSet();
             this.changeCur = new System.Windows.Forms.ComboBox();
+            this.cURRENCYBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.opnum = new System.Windows.Forms.TextBox();
@@ -61,16 +62,15 @@ namespace WindowsFormsApp1
             this.rus_box = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cURRENCYBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.currency = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tYPEOPERATIONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -166,6 +166,11 @@ namespace WindowsFormsApp1
             this.changeCur.TabIndex = 5;
             this.changeCur.ValueMember = "ID";
             this.changeCur.SelectedIndexChanged += new System.EventHandler(this.changeCur_SelectedIndexChanged);
+            // 
+            // cURRENCYBindingSource1
+            // 
+            this.cURRENCYBindingSource1.DataMember = "CURRENCY";
+            this.cURRENCYBindingSource1.DataSource = this.dataSet;
             // 
             // label4
             // 
@@ -333,26 +338,19 @@ namespace WindowsFormsApp1
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Сумма операции";
             // 
-            // label8
+            // currency
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(418, 51);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "@курс";
-            // 
-            // cURRENCYBindingSource1
-            // 
-            this.cURRENCYBindingSource1.DataMember = "CURRENCY";
-            this.cURRENCYBindingSource1.DataSource = this.dataSet;
+            this.currency.Location = new System.Drawing.Point(418, 48);
+            this.currency.Name = "currency";
+            this.currency.Size = new System.Drawing.Size(98, 20);
+            this.currency.TabIndex = 15;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 397);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.currency);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
@@ -367,11 +365,11 @@ namespace WindowsFormsApp1
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tYPEOPERATIONBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,8 +407,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox rus_box;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.BindingSource cURRENCYBindingSource1;
+        private System.Windows.Forms.TextBox currency;
 
         //private DataSet5TableAdapters.CURRENCYTableAdapter cURRENCYTableAdapter;
         //private DataSet4TableAdapters.TYPE_OPTableAdapter tYPE_OPTableAdapter;

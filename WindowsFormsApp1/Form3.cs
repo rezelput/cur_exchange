@@ -79,7 +79,7 @@ namespace WindowsFormsApp1
 
         private void Sum_cur_Click(object sender, EventArgs e)
         {
-            CurOpSum.Text = Convert.ToString(Convert.ToInt32(curruncy.Text) * Convert.ToInt32(rus_box.Text));
+            CurOpSum.Text = (Convert.ToDouble(currency.Text) * Convert.ToDouble(rus_box.Text)).ToString();
         }
 
         private void changeCur_SelectedIndexChanged(object sender, EventArgs e)
