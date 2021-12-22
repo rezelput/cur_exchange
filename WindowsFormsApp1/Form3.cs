@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
             {
                 int id = Convert.ToInt32(id_op.Text);
                 int id_type = Convert.ToInt32(typeop_box.SelectedValue);
-                string dateyy = Convert.ToString(date);
+                DateTime dateyy = Convert.ToDateTime(date.Value);
                 string num = opnum.Text;
                 string sum = CurOpSum.Text;
                 int id_user = Convert.ToInt32(UsBox.SelectedValue);
@@ -51,7 +51,7 @@ namespace WindowsFormsApp1
                     cmd.Connection = ConnectionToOracle;
                     cmd.Parameters.Add("id", OracleType.Int32).Value = id;
                     cmd.Parameters.Add("id_type", OracleType.Int32).Value = id_type;
-                    cmd.Parameters.Add("dateyy", OracleType.VarChar).Value = dateyy;
+                    cmd.Parameters.Add("dateyy", OracleType.DateTime).Value = dateyy;
                     cmd.Parameters.Add("num", OracleType.VarChar).Value = num;
                     cmd.Parameters.Add("sum", OracleType.VarChar).Value = sum;
                     cmd.Parameters.Add("id_user", OracleType.Int32).Value = id_user;

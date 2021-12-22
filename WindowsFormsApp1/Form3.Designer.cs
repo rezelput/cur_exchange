@@ -62,6 +62,7 @@ namespace WindowsFormsApp1
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.cURRENCYBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
@@ -69,6 +70,7 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.tYPEOPERATIONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -155,14 +157,14 @@ namespace WindowsFormsApp1
             // 
             // changeCur
             // 
-            this.changeCur.DataSource = this.cURRENCYBindingSource;
+            this.changeCur.DataSource = this.cURRENCYBindingSource1;
             this.changeCur.DisplayMember = "NAME";
             this.changeCur.FormattingEnabled = true;
-            this.changeCur.Location = new System.Drawing.Point(28, 238);
+            this.changeCur.Location = new System.Drawing.Point(31, 239);
             this.changeCur.Name = "changeCur";
             this.changeCur.Size = new System.Drawing.Size(121, 21);
             this.changeCur.TabIndex = 5;
-            this.changeCur.ValueMember = "VALUES_SUM";
+            this.changeCur.ValueMember = "ID";
             this.changeCur.SelectedIndexChanged += new System.EventHandler(this.changeCur_SelectedIndexChanged);
             // 
             // label4
@@ -185,7 +187,7 @@ namespace WindowsFormsApp1
             // 
             // opnum
             // 
-            this.opnum.Location = new System.Drawing.Point(28, 182);
+            this.opnum.Location = new System.Drawing.Point(31, 181);
             this.opnum.Name = "opnum";
             this.opnum.Size = new System.Drawing.Size(138, 20);
             this.opnum.TabIndex = 5;
@@ -194,7 +196,7 @@ namespace WindowsFormsApp1
             // 
             this.date.Location = new System.Drawing.Point(28, 120);
             this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(138, 20);
+            this.date.Size = new System.Drawing.Size(204, 20);
             this.date.TabIndex = 4;
             // 
             // label3
@@ -340,6 +342,11 @@ namespace WindowsFormsApp1
             this.label8.TabIndex = 14;
             this.label8.Text = "@курс";
             // 
+            // cURRENCYBindingSource1
+            // 
+            this.cURRENCYBindingSource1.DataMember = "CURRENCY";
+            this.cURRENCYBindingSource1.DataSource = this.dataSet;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,6 +371,7 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cURRENCYBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,6 +410,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.BindingSource cURRENCYBindingSource1;
 
         //private DataSet5TableAdapters.CURRENCYTableAdapter cURRENCYTableAdapter;
         //private DataSet4TableAdapters.TYPE_OPTableAdapter tYPE_OPTableAdapter;
