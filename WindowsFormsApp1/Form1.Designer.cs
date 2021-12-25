@@ -50,11 +50,11 @@ namespace WindowsFormsApp1
             this.процедураToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.analyst_op = new System.Windows.Forms.ToolStripMenuItem();
             this.UpdateDtabtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.oPERATIONTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.OPERATIONTableAdapter();
             this.создатьИсториюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.currency_exch_his = new System.Windows.Forms.ToolStripMenuItem();
             this.histr_op = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.oPERATIONTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.OPERATIONTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPERATIONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
@@ -74,9 +74,9 @@ namespace WindowsFormsApp1
             this.iDUSERDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn1});
             this.dataGridView1.DataSource = this.oPERATIONBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 41);
+            this.dataGridView1.Location = new System.Drawing.Point(30, 45);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(744, 382);
+            this.dataGridView1.Size = new System.Drawing.Size(743, 378);
             this.dataGridView1.TabIndex = 0;
             // 
             // iDDataGridViewTextBoxColumn
@@ -166,14 +166,14 @@ namespace WindowsFormsApp1
             // clientadd_btn
             // 
             this.clientadd_btn.Name = "clientadd_btn";
-            this.clientadd_btn.Size = new System.Drawing.Size(180, 22);
+            this.clientadd_btn.Size = new System.Drawing.Size(129, 22);
             this.clientadd_btn.Text = "Клиент";
             this.clientadd_btn.Click += new System.EventHandler(this.clientadd_btn_Click);
             // 
             // opadd_btn
             // 
             this.opadd_btn.Name = "opadd_btn";
-            this.opadd_btn.Size = new System.Drawing.Size(180, 22);
+            this.opadd_btn.Size = new System.Drawing.Size(129, 22);
             this.opadd_btn.Text = "Операция";
             this.opadd_btn.Click += new System.EventHandler(this.opadd_btn_Click);
             // 
@@ -201,7 +201,7 @@ namespace WindowsFormsApp1
             // analyst_op
             // 
             this.analyst_op.Name = "analyst_op";
-            this.analyst_op.Size = new System.Drawing.Size(180, 22);
+            this.analyst_op.Size = new System.Drawing.Size(171, 22);
             this.analyst_op.Text = "Анализ операций";
             this.analyst_op.Click += new System.EventHandler(this.analyst_op_Click);
             // 
@@ -211,20 +211,6 @@ namespace WindowsFormsApp1
             this.UpdateDtabtn.Size = new System.Drawing.Size(180, 22);
             this.UpdateDtabtn.Text = "Обновить данные";
             this.UpdateDtabtn.Click += new System.EventHandler(this.UpdateDtabtn_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "Выход";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // oPERATIONTableAdapter
-            // 
-            this.oPERATIONTableAdapter.ClearBeforeFill = true;
             // 
             // создатьИсториюToolStripMenuItem
             // 
@@ -248,6 +234,20 @@ namespace WindowsFormsApp1
             this.histr_op.Size = new System.Drawing.Size(180, 22);
             this.histr_op.Text = "Операция";
             this.histr_op.Click += new System.EventHandler(this.histr_op_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "Выход";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // oPERATIONTableAdapter
+            // 
+            this.oPERATIONTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 

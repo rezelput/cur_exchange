@@ -105,6 +105,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addhistrop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addhistrop.Designer.cs">
+      <DependentUpon>addhistrop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Auto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="addhistrop.resx">
+      <DependentUpon>addhistrop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Auto.resx">
       <DependentUpon>Auto.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿//using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,8 @@ namespace WindowsFormsApp1
         const string SqlConn = "Data Source = localhost:1521/temp_cur; User ID=SADMIN;password=pwd123";
         DataTable dt = new DataTable();
         private BindingSource bindingSource1 = new BindingSource();
+
+        
         public Form1()
         {
             InitializeComponent();
@@ -24,10 +27,10 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            connectionString = new OracleConnection("Data Source = localhost:1521/temp_cur; User ID=SADMIN;password=pwd123");
+            connectionString = new System.Data.OracleClient.OracleConnection("Data Source = localhost:1521/temp_cur; User ID=SADMIN;password=pwd123");
             connectionString.Open();
             DataSet ds = new DataSet();
-            dataAdapter = new OracleDataAdapter("SELECT ID,ID_TYPE,DATE_DDMMYY,ONUMBER,SUMM,ID_USER,ID_CUR FROM OPERATION", connectionString);
+            dataAdapter = new System.Data.OracleClient.OracleDataAdapter("SELECT ID,ID_TYPE,DATE_DDMMYY,ONUMBER,SUMM,ID_USER,ID_CUR FROM OPERATION", connectionString);
             table = new DataTable();
             dataAdapter.Fill(table);
             dataGridView1.DataSource = table;
@@ -72,8 +75,8 @@ namespace WindowsFormsApp1
             GetData(null);
         }
 
-        private OracleConnection connectionString = null;
-        private OracleDataAdapter dataAdapter = null;
+        private System.Data.OracleClient.OracleConnection connectionString = null;
+        private System.Data.OracleClient.OracleDataAdapter dataAdapter = null;
         private DataTable table = null;
         private void GetData(string selectCommand)
         {
@@ -124,23 +127,13 @@ namespace WindowsFormsApp1
             
         }
 
+       // public bool BindByName { get; set; }
+
         private void currency_exch_his_Click(object sender, EventArgs e)
         {
+            addhistrop hr1 = new addhistrop();
+            hr1.Show();
             
-            try
-            {
-                Form3 f3 = new Form3();
-                const string connectionString = "Data Source = localhost:1521/temp_cur; User ID=SADMIN;password=pwd123";
-                System.Data.OracleClient.OracleCommand command = new System.Data.OracleClient.OracleCommand();
-                command.CommandText = "\"CREATEHISTORYCURRENCY\"";
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add(new OracleParameter("S1", OracleType.Int32)).Value = f3.id_op;
-
-            }
-            catch (Exception exp)
-            {
-                MessageBox.Show("Ошибка в обработке события" + exp.Message);
-            }
         }
 
         private void histr_op_Click(object sender, EventArgs e)
