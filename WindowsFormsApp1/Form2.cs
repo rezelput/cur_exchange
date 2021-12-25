@@ -32,10 +32,6 @@ namespace WindowsFormsApp1
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             const string connectionString = "Data Source = localhost:1521/temp_cur; User ID=SADMIN;password=pwd123";
-            //string a = textBox2.Text;
-            //string b = login_box.Text;
-            //int c = Convert.ToInt32(comboBox1.SelectedValue);
-            //int d = Convert.ToInt32(textBox3.Text);
             try
             {
             int a = Convert.ToInt32(textBox3.Text);

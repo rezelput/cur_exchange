@@ -52,6 +52,9 @@ namespace WindowsFormsApp1
             this.UpdateDtabtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.oPERATIONTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.OPERATIONTableAdapter();
+            this.создатьИсториюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.currency_exch_his = new System.Windows.Forms.ToolStripMenuItem();
+            this.histr_op = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPERATIONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
@@ -71,9 +74,9 @@ namespace WindowsFormsApp1
             this.iDUSERDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn1});
             this.dataGridView1.DataSource = this.oPERATIONBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(334, 43);
+            this.dataGridView1.Location = new System.Drawing.Point(29, 41);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(445, 382);
+            this.dataGridView1.Size = new System.Drawing.Size(744, 382);
             this.dataGridView1.TabIndex = 0;
             // 
             // iDDataGridViewTextBoxColumn
@@ -163,14 +166,14 @@ namespace WindowsFormsApp1
             // clientadd_btn
             // 
             this.clientadd_btn.Name = "clientadd_btn";
-            this.clientadd_btn.Size = new System.Drawing.Size(129, 22);
+            this.clientadd_btn.Size = new System.Drawing.Size(180, 22);
             this.clientadd_btn.Text = "Клиент";
             this.clientadd_btn.Click += new System.EventHandler(this.clientadd_btn_Click);
             // 
             // opadd_btn
             // 
             this.opadd_btn.Name = "opadd_btn";
-            this.opadd_btn.Size = new System.Drawing.Size(129, 22);
+            this.opadd_btn.Size = new System.Drawing.Size(180, 22);
             this.opadd_btn.Text = "Операция";
             this.opadd_btn.Click += new System.EventHandler(this.opadd_btn_Click);
             // 
@@ -179,7 +182,8 @@ namespace WindowsFormsApp1
             this.toolStripSplitButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripSplitButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.процедураToolStripMenuItem,
-            this.UpdateDtabtn});
+            this.UpdateDtabtn,
+            this.создатьИсториюToolStripMenuItem});
             this.toolStripSplitButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton2.Image")));
             this.toolStripSplitButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton2.Name = "toolStripSplitButton2";
@@ -204,7 +208,7 @@ namespace WindowsFormsApp1
             // UpdateDtabtn
             // 
             this.UpdateDtabtn.Name = "UpdateDtabtn";
-            this.UpdateDtabtn.Size = new System.Drawing.Size(172, 22);
+            this.UpdateDtabtn.Size = new System.Drawing.Size(180, 22);
             this.UpdateDtabtn.Text = "Обновить данные";
             this.UpdateDtabtn.Click += new System.EventHandler(this.UpdateDtabtn_Click);
             // 
@@ -221,6 +225,29 @@ namespace WindowsFormsApp1
             // oPERATIONTableAdapter
             // 
             this.oPERATIONTableAdapter.ClearBeforeFill = true;
+            // 
+            // создатьИсториюToolStripMenuItem
+            // 
+            this.создатьИсториюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.currency_exch_his,
+            this.histr_op});
+            this.создатьИсториюToolStripMenuItem.Name = "создатьИсториюToolStripMenuItem";
+            this.создатьИсториюToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.создатьИсториюToolStripMenuItem.Text = "Создать историю";
+            // 
+            // currency_exch_his
+            // 
+            this.currency_exch_his.Name = "currency_exch_his";
+            this.currency_exch_his.Size = new System.Drawing.Size(180, 22);
+            this.currency_exch_his.Text = "Курс валюты";
+            this.currency_exch_his.Click += new System.EventHandler(this.currency_exch_his_Click);
+            // 
+            // histr_op
+            // 
+            this.histr_op.Name = "histr_op";
+            this.histr_op.Size = new System.Drawing.Size(180, 22);
+            this.histr_op.Text = "Операция";
+            this.histr_op.Click += new System.EventHandler(this.histr_op_Click);
             // 
             // Form1
             // 
@@ -274,6 +301,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DataGridViewTextBoxColumn iDUSERDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.ToolStripMenuItem UpdateDtabtn;
+        private System.Windows.Forms.ToolStripMenuItem создатьИсториюToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem currency_exch_his;
+        private System.Windows.Forms.ToolStripMenuItem histr_op;
     }
 }
 

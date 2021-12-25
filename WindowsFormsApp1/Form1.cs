@@ -123,5 +123,30 @@ namespace WindowsFormsApp1
             }
             
         }
+
+        private void currency_exch_his_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                Form3 f3 = new Form3();
+                const string connectionString = "Data Source = localhost:1521/temp_cur; User ID=SADMIN;password=pwd123";
+                System.Data.OracleClient.OracleCommand command = new System.Data.OracleClient.OracleCommand();
+                command.CommandText = "\"CREATEHISTORYCURRENCY\"";
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new OracleParameter("S1", OracleType.Int32)).Value = f3.id_op;
+
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Ошибка в обработке события" + exp.Message);
+            }
+        }
+
+        private void histr_op_Click(object sender, EventArgs e)
+        {
+            HistoryOP hpo = new HistoryOP();
+            hpo.Show();
+        }
     }
 }

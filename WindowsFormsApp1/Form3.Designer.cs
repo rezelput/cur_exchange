@@ -381,14 +381,12 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox typeop_box;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox id_op;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker date;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox opnum;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox changeCur;
         private System.Windows.Forms.ComboBox UsBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ToolStripButton AddOp;
@@ -409,6 +407,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.BindingSource cURRENCYBindingSource1;
         private System.Windows.Forms.TextBox currency;
+        public System.Windows.Forms.TextBox id_op;
+        public System.Windows.Forms.ComboBox changeCur;
 
         //private DataSet5TableAdapters.CURRENCYTableAdapter cURRENCYTableAdapter;
         //private DataSet4TableAdapters.TYPE_OPTableAdapter tYPE_OPTableAdapter;
