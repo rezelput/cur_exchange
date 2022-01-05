@@ -73,11 +73,7 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-
-        }
+        
 
         private void Sum_cur_Click(object sender, EventArgs e)
         {
@@ -89,7 +85,6 @@ namespace WindowsFormsApp1
             using (System.Data.OracleClient.OracleConnection ConnectionToOracle = new System.Data.OracleClient.OracleConnection(connectionString))
             {
 
-                //string name = com.ExecuteScalar().ToString();
                 try
                 {
                     System.Data.OracleClient.OracleCommand com = new System.Data.OracleClient.OracleCommand();
@@ -97,8 +92,7 @@ namespace WindowsFormsApp1
                     com.Parameters.AddWithValue("dd", Convert.ToInt32(changeCur.SelectedValue));
                     com.Connection = ConnectionToOracle;
 
-                    //label8.Text = name;
-                    com.Parameters.Add(new OracleParameter("dd", currency.Text));
+                    com.Parameters.Add(new OracleParameter("dd", OracleType.VarChar)).Value = currency.Text;
                     ConnectionToOracle.Open();
                     com.ExecuteNonQuery();
                 }
@@ -109,9 +103,5 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void currency_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

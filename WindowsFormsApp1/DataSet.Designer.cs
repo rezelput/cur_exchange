@@ -1272,8 +1272,7 @@ namespace WindowsFormsApp1 {
                     return this.columnNAME;
                 }
             }
-
-
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]

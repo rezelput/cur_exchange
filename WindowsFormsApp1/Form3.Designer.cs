@@ -306,7 +306,6 @@ namespace WindowsFormsApp1
             this.curruncy.Size = new System.Drawing.Size(106, 13);
             this.curruncy.TabIndex = 10;
             this.curruncy.Text = "Курс валюты, (1:1) :";
-            this.curruncy.Click += new System.EventHandler(this.label8_Click);
             // 
             // rus_box
             // 
@@ -342,9 +341,8 @@ namespace WindowsFormsApp1
             // 
             this.currency.Location = new System.Drawing.Point(418, 48);
             this.currency.Name = "currency";
-            this.currency.Size = new System.Drawing.Size(98, 20);
-            this.currency.TabIndex = 15;
-            this.currency.TextChanged += new System.EventHandler(this.currency_TextChanged);
+            this.currency.Size = new System.Drawing.Size(100, 20);
+            this.currency.TabIndex = 14;
             // 
             // Form3
             // 
@@ -407,9 +405,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.BindingSource cURRENCYBindingSource1;
-        private System.Windows.Forms.TextBox currency;
         public System.Windows.Forms.TextBox id_op;
         public System.Windows.Forms.ComboBox changeCur;
+        private System.Windows.Forms.TextBox currency;
 
         //private DataSet5TableAdapters.CURRENCYTableAdapter cURRENCYTableAdapter;
         //private DataSet4TableAdapters.TYPE_OPTableAdapter tYPE_OPTableAdapter;
