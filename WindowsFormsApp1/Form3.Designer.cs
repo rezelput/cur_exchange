@@ -344,6 +344,7 @@ namespace WindowsFormsApp1
             this.currency.Name = "currency";
             this.currency.Size = new System.Drawing.Size(98, 20);
             this.currency.TabIndex = 15;
+            this.currency.TextChanged += new System.EventHandler(this.currency_TextChanged);
             // 
             // Form3
             // 

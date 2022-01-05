@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
 
         private void AddOp_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 int id = Convert.ToInt32(id_op.Text);
@@ -75,8 +75,8 @@ namespace WindowsFormsApp1
 
         private void label8_Click(object sender, EventArgs e)
         {
-            
-                
+
+
         }
 
         private void Sum_cur_Click(object sender, EventArgs e)
@@ -88,8 +88,30 @@ namespace WindowsFormsApp1
         {
             using (System.Data.OracleClient.OracleConnection ConnectionToOracle = new System.Data.OracleClient.OracleConnection(connectionString))
             {
-                
+
+                //string name = com.ExecuteScalar().ToString();
+                try
+                {
+                    System.Data.OracleClient.OracleCommand com = new System.Data.OracleClient.OracleCommand();
+                    com.CommandText = "SELECT SUM FROM CURRENCY_VALUES WHERE ID_CUR=(SELECT ID FROM CURRENCY WHERE ID=:dd)";
+                    com.Parameters.AddWithValue("dd", Convert.ToInt32(changeCur.SelectedValue));
+                    com.Connection = ConnectionToOracle;
+
+                    //label8.Text = name;
+                    com.Parameters.Add(new OracleParameter("dd", currency.Text));
+                    ConnectionToOracle.Open();
+                    com.ExecuteNonQuery();
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show("Ошибка в обработке события" + exp.Message);
+                }
             }
+        }
+
+        private void currency_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
