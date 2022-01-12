@@ -141,5 +141,12 @@ namespace WindowsFormsApp1
             History hpo = new History();
             hpo.Show();
         }
+
+        private void курсВалютToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addhistrop cur = new addhistrop();
+            cur.Show();
+
+        }
     }
 }

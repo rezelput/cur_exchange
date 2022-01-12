@@ -54,6 +54,7 @@ namespace WindowsFormsApp1
             this.histr_op = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.oPERATIONTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.OPERATIONTableAdapter();
+            this.курсВалютToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPERATIONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
@@ -214,7 +215,8 @@ namespace WindowsFormsApp1
             // создатьИсториюToolStripMenuItem
             // 
             this.создатьИсториюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.histr_op});
+            this.histr_op,
+            this.курсВалютToolStripMenuItem});
             this.создатьИсториюToolStripMenuItem.Name = "создатьИсториюToolStripMenuItem";
             this.создатьИсториюToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.создатьИсториюToolStripMenuItem.Text = "Создать историю";
@@ -239,6 +241,13 @@ namespace WindowsFormsApp1
             // oPERATIONTableAdapter
             // 
             this.oPERATIONTableAdapter.ClearBeforeFill = true;
+            // 
+            // курсВалютToolStripMenuItem
+            // 
+            this.курсВалютToolStripMenuItem.Name = "курсВалютToolStripMenuItem";
+            this.курсВалютToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.курсВалютToolStripMenuItem.Text = "курс валют";
+            this.курсВалютToolStripMenuItem.Click += new System.EventHandler(this.курсВалютToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -294,6 +303,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem UpdateDtabtn;
         private System.Windows.Forms.ToolStripMenuItem создатьИсториюToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem histr_op;
+        private System.Windows.Forms.ToolStripMenuItem курсВалютToolStripMenuItem;
     }
 }
 
