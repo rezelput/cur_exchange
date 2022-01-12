@@ -34,6 +34,7 @@ namespace WindowsFormsApp1
             this.dataSet = new WindowsFormsApp1.DataSet();
             this.close = new System.Windows.Forms.Button();
             this.dataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetBindingSource)).BeginInit();
@@ -67,11 +68,22 @@ namespace WindowsFormsApp1
             this.dataSetBindingSource.DataSource = this.dataSet;
             this.dataSetBindingSource.Position = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(391, 385);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Обновить";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 418);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.close);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form4";
@@ -89,5 +101,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button close;
         public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.BindingSource dataSetBindingSource;
+        private System.Windows.Forms.Button button1;
     }
 }
