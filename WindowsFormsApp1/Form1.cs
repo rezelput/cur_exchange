@@ -43,10 +43,12 @@ namespace WindowsFormsApp1
             {
                 radioButton1.Checked = true;
                 delete_menu.Enabled = true;
+                курсВалютToolStripMenuItem.Enabled = true;
             }
             else
             {
                 delete_menu.Enabled = false;
+                курсВалютToolStripMenuItem.Enabled = false;
             }
             label1.Text = asd;
         }
