@@ -36,11 +36,16 @@ namespace WindowsFormsApp1
                 // Проверяем, что количество строк из БД больше нуля
                 if (dt.Rows.Count > 0)
                 {
-                    // Нужный Вам ID
-                    string id = dt.Rows[0][0].ToString();
-                    this.Hide();
                     Form1 ss = new Form1();
+                    Form2 f2 = new Form2();
+
+                // Нужный Вам ID
+                    string id = dt.Rows[0][0].ToString();   
+                    ss.asd = usersbox.Text;
+                    //f2.asd = usersbox.Text;
                     ss.Show();
+                    this.Hide();
+                    
                 }
                 else
                 {

@@ -22,6 +22,7 @@ namespace WindowsFormsApp1
         OracleConnectionStringBuilder conn = new OracleConnectionStringBuilder(connectionString);
         DataSet ds = new DataSet();
 
+        public string asd;
         private void Form2_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet.COUNTRY". При необходимости она может быть перемещена или удалена.
@@ -31,7 +32,8 @@ namespace WindowsFormsApp1
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet.CITY". При необходимости она может быть перемещена или удалена.
             this.cITYTableAdapter.Fill(this.dataSet.CITY);
 
-
+            //Commd(asd);
+            //profile_tt.Text = "Profile: " + asd;
         }
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -95,6 +97,8 @@ namespace WindowsFormsApp1
 
                 сохранитьToolStripMenuItem.Enabled = true;
                 обновитьToolStripMenuItem.Enabled = false;
+
+               
             }
         }
 
@@ -113,6 +117,7 @@ namespace WindowsFormsApp1
 
                 сохранитьToolStripMenuItem.Enabled = false;
                 обновитьToolStripMenuItem.Enabled = true;
+                
             }
         }
 
@@ -204,7 +209,27 @@ namespace WindowsFormsApp1
             Form4 fg = new Form4();
             fg.Show();
         }
-        
-        
+
+
+       /* void Commd(string profile)
+        {
+            //Form1 f1 = new Form1();
+            profile = profile_tt.Text;
+
+            switch (profile)
+            {
+                case "ADMIN":
+                    radioButton1.Enabled = true;
+                    comboBox5.Enabled = true;
+                    удалитьДанныеToolStripMenuItem.Enabled = true;
+                    break;
+                case "revizor":
+                    radioButton1.Enabled = false;
+                    comboBox5.Enabled = false;
+                    удалитьДанныеToolStripMenuItem.Enabled = false;
+                    break;
+            }
+        }
+        */
     }
 }

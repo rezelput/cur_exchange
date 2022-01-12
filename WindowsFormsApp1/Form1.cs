@@ -23,7 +23,11 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            
+
         }
+
+        public string asd;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -34,12 +38,20 @@ namespace WindowsFormsApp1
             table = new DataTable();
             dataAdapter.Fill(table);
             dataGridView1.DataSource = table;
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet.OPERATION". При необходимости она может быть перемещена или удалена.
-            //this.oPERATIONTableAdapter.Fill(this.dataSet.OPERATION);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet1.OPERATION". При необходимости она может быть перемещена или удалена.
-            //this.oPERATIONTableAdapter.Fill(this.dataSet1.OPERATION);
-
+            
+            if (asd == "ADMIN")
+            {
+                radioButton1.Checked = true;
+                delete_menu.Enabled = true;
+            }
+            else
+            {
+                delete_menu.Enabled = false;
+            }
+            label1.Text = asd;
         }
+
+        
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -59,8 +71,7 @@ namespace WindowsFormsApp1
 
         private void clientadd_btn_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
-            f2.Show();
+            
         }
 
         private void opadd_btn_Click(object sender, EventArgs e)
@@ -147,6 +158,25 @@ namespace WindowsFormsApp1
             addhistrop cur = new addhistrop();
             cur.Show();
 
+        }
+
+        private void добавитьредактироватьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Show();
+        }
+
+        private void delete_menu_Click(object sender, EventArgs e)
+        {
+            delete_form df = new delete_form();
+            df.Show();
+        }
+
+        private void изменитьПользователяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Auto auto = new Auto();
+            auto.Show();
+            this.Close();
         }
     }
 }

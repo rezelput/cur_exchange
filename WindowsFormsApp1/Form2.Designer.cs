@@ -45,6 +45,12 @@ namespace WindowsFormsApp1
             this.addbtn = new System.Windows.Forms.RadioButton();
             this.cITYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Grp_Edit = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.name_ff_box = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -52,19 +58,13 @@ namespace WindowsFormsApp1
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.обновитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.очиститьФормыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.watch_client = new System.Windows.Forms.ToolStripButton();
             this.CloseFr2 = new System.Windows.Forms.ToolStripButton();
             this.cITYTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.CITYTableAdapter();
             this.uSERSTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.USERSTableAdapter();
             this.cOUNTRYTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.COUNTRYTableAdapter();
-            this.label6 = new System.Windows.Forms.Label();
-            this.name_ff_box = new System.Windows.Forms.TextBox();
-            this.watch_client = new System.Windows.Forms.ToolStripButton();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.обновитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Grp_Add.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cOUNTRYBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
@@ -205,6 +205,63 @@ namespace WindowsFormsApp1
             this.Grp_Edit.TabStop = false;
             this.Grp_Edit.Text = "Изменить";
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(185, 164);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(15, 14);
+            this.checkBox2.TabIndex = 15;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(185, 208);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 14;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(25, 186);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Выбрать страну";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DataSource = this.cOUNTRYBindingSource;
+            this.comboBox3.DisplayMember = "NAME";
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(28, 205);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(151, 21);
+            this.comboBox3.TabIndex = 12;
+            this.comboBox3.ValueMember = "ID";
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 142);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(148, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Имя пользователя (полное)";
+            // 
+            // name_ff_box
+            // 
+            this.name_ff_box.Location = new System.Drawing.Point(28, 158);
+            this.name_ff_box.Name = "name_ff_box";
+            this.name_ff_box.Size = new System.Drawing.Size(151, 20);
+            this.name_ff_box.TabIndex = 10;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -250,7 +307,7 @@ namespace WindowsFormsApp1
             this.CloseFr2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(724, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -274,12 +331,29 @@ namespace WindowsFormsApp1
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
+            // обновитьToolStripMenuItem
+            // 
+            this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
+            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.обновитьToolStripMenuItem.Text = "Обновить";
+            this.обновитьToolStripMenuItem.Click += new System.EventHandler(this.обновитьToolStripMenuItem_Click);
+            // 
             // очиститьФормыToolStripMenuItem
             // 
             this.очиститьФормыToolStripMenuItem.Name = "очиститьФормыToolStripMenuItem";
             this.очиститьФормыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.очиститьФормыToolStripMenuItem.Text = "Очистить формы";
             this.очиститьФормыToolStripMenuItem.Click += new System.EventHandler(this.очиститьФормыToolStripMenuItem_Click);
+            // 
+            // watch_client
+            // 
+            this.watch_client.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.watch_client.Image = ((System.Drawing.Image)(resources.GetObject("watch_client.Image")));
+            this.watch_client.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.watch_client.Name = "watch_client";
+            this.watch_client.Size = new System.Drawing.Size(68, 22);
+            this.watch_client.Text = "Просмотр";
+            this.watch_client.Click += new System.EventHandler(this.watch_client_Click);
             // 
             // CloseFr2
             // 
@@ -303,85 +377,11 @@ namespace WindowsFormsApp1
             // 
             this.cOUNTRYTableAdapter.ClearBeforeFill = true;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 142);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(148, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Имя пользователя (полное)";
-            // 
-            // name_ff_box
-            // 
-            this.name_ff_box.Location = new System.Drawing.Point(28, 158);
-            this.name_ff_box.Name = "name_ff_box";
-            this.name_ff_box.Size = new System.Drawing.Size(151, 20);
-            this.name_ff_box.TabIndex = 10;
-            // 
-            // watch_client
-            // 
-            this.watch_client.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.watch_client.Image = ((System.Drawing.Image)(resources.GetObject("watch_client.Image")));
-            this.watch_client.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.watch_client.Name = "watch_client";
-            this.watch_client.Size = new System.Drawing.Size(68, 22);
-            this.watch_client.Text = "Просмотр";
-            this.watch_client.Click += new System.EventHandler(this.watch_client_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 186);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Выбрать страну";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DataSource = this.cOUNTRYBindingSource;
-            this.comboBox3.DisplayMember = "NAME";
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(28, 205);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(151, 21);
-            this.comboBox3.TabIndex = 12;
-            this.comboBox3.ValueMember = "ID";
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(185, 208);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 14;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(185, 164);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 15;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // обновитьToolStripMenuItem
-            // 
-            this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
-            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.обновитьToolStripMenuItem.Text = "Обновить";
-            this.обновитьToolStripMenuItem.Click += new System.EventHandler(this.обновитьToolStripMenuItem_Click);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(724, 450);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.Grp_Edit);
             this.Controls.Add(this.Grp_Add);
