@@ -138,7 +138,7 @@ namespace WindowsFormsApp1
 
         private void histr_op_Click(object sender, EventArgs e)
         {
-            HistoryOP hpo = new HistoryOP();
+            History hpo = new History();
             hpo.Show();
         }
     }

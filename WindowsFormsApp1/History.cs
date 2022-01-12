@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class HistoryOP : Form
+    public partial class History : Form
     {
 
         const string connectionString = "Data Source = localhost:1521/temp_cur; User ID=SADMIN;password=pwd123";
-        public HistoryOP()
+        public History()
         {
             InitializeComponent();
         }

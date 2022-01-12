@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1
 {
-    partial class HistoryOP
+    partial class History
     {
         /// <summary>
         /// Required designer variable.

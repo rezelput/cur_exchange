@@ -32,6 +32,7 @@ namespace WindowsFormsApp1
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.Grp_Add = new System.Windows.Forms.GroupBox();
+            this.login_box = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,9 +40,10 @@ namespace WindowsFormsApp1
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.cITYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cOUNTRYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet = new WindowsFormsApp1.DataSet();
             this.addbtn = new System.Windows.Forms.RadioButton();
+            this.cITYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Grp_Edit = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -54,16 +56,22 @@ namespace WindowsFormsApp1
             this.CloseFr2 = new System.Windows.Forms.ToolStripButton();
             this.cITYTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.CITYTableAdapter();
             this.uSERSTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.USERSTableAdapter();
-            this.login_box = new System.Windows.Forms.TextBox();
-            this.cOUNTRYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cOUNTRYTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.COUNTRYTableAdapter();
+            this.label6 = new System.Windows.Forms.Label();
+            this.name_ff_box = new System.Windows.Forms.TextBox();
+            this.watch_client = new System.Windows.Forms.ToolStripButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.обновитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Grp_Add.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cITYBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOUNTRYBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cITYBindingSource)).BeginInit();
             this.Grp_Edit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cOUNTRYBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Grp_Add
@@ -83,6 +91,13 @@ namespace WindowsFormsApp1
             this.Grp_Add.TabIndex = 0;
             this.Grp_Add.TabStop = false;
             this.Grp_Add.Text = "Добавить";
+            // 
+            // login_box
+            // 
+            this.login_box.Location = new System.Drawing.Point(198, 96);
+            this.login_box.Name = "login_box";
+            this.login_box.Size = new System.Drawing.Size(97, 20);
+            this.login_box.TabIndex = 9;
             // 
             // label5
             // 
@@ -145,10 +160,10 @@ namespace WindowsFormsApp1
             this.comboBox1.TabIndex = 1;
             this.comboBox1.ValueMember = "ID";
             // 
-            // cITYBindingSource
+            // cOUNTRYBindingSource
             // 
-            this.cITYBindingSource.DataMember = "CITY";
-            this.cITYBindingSource.DataSource = this.dataSet;
+            this.cOUNTRYBindingSource.DataMember = "COUNTRY";
+            this.cOUNTRYBindingSource.DataSource = this.dataSet;
             // 
             // dataSet
             // 
@@ -167,8 +182,19 @@ namespace WindowsFormsApp1
             this.addbtn.UseVisualStyleBackColor = true;
             this.addbtn.CheckedChanged += new System.EventHandler(this.addbtn_CheckedChanged);
             // 
+            // cITYBindingSource
+            // 
+            this.cITYBindingSource.DataMember = "CITY";
+            this.cITYBindingSource.DataSource = this.dataSet;
+            // 
             // Grp_Edit
             // 
+            this.Grp_Edit.Controls.Add(this.checkBox2);
+            this.Grp_Edit.Controls.Add(this.checkBox1);
+            this.Grp_Edit.Controls.Add(this.label7);
+            this.Grp_Edit.Controls.Add(this.comboBox3);
+            this.Grp_Edit.Controls.Add(this.label6);
+            this.Grp_Edit.Controls.Add(this.name_ff_box);
             this.Grp_Edit.Controls.Add(this.label4);
             this.Grp_Edit.Controls.Add(this.comboBox2);
             this.Grp_Edit.Controls.Add(this.updatebtn);
@@ -220,6 +246,7 @@ namespace WindowsFormsApp1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSplitButton1,
+            this.watch_client,
             this.CloseFr2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -232,6 +259,7 @@ namespace WindowsFormsApp1
             this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.сохранитьToolStripMenuItem,
+            this.обновитьToolStripMenuItem,
             this.очиститьФормыToolStripMenuItem});
             this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
             this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -242,14 +270,14 @@ namespace WindowsFormsApp1
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // очиститьФормыToolStripMenuItem
             // 
             this.очиститьФормыToolStripMenuItem.Name = "очиститьФормыToolStripMenuItem";
-            this.очиститьФормыToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.очиститьФормыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.очиститьФормыToolStripMenuItem.Text = "Очистить формы";
             this.очиститьФормыToolStripMenuItem.Click += new System.EventHandler(this.очиститьФормыToolStripMenuItem_Click);
             // 
@@ -271,21 +299,83 @@ namespace WindowsFormsApp1
             // 
             this.uSERSTableAdapter.ClearBeforeFill = true;
             // 
-            // login_box
-            // 
-            this.login_box.Location = new System.Drawing.Point(198, 96);
-            this.login_box.Name = "login_box";
-            this.login_box.Size = new System.Drawing.Size(97, 20);
-            this.login_box.TabIndex = 9;
-            // 
-            // cOUNTRYBindingSource
-            // 
-            this.cOUNTRYBindingSource.DataMember = "COUNTRY";
-            this.cOUNTRYBindingSource.DataSource = this.dataSet;
-            // 
             // cOUNTRYTableAdapter
             // 
             this.cOUNTRYTableAdapter.ClearBeforeFill = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 142);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(148, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Имя пользователя (полное)";
+            // 
+            // name_ff_box
+            // 
+            this.name_ff_box.Location = new System.Drawing.Point(28, 158);
+            this.name_ff_box.Name = "name_ff_box";
+            this.name_ff_box.Size = new System.Drawing.Size(151, 20);
+            this.name_ff_box.TabIndex = 10;
+            // 
+            // watch_client
+            // 
+            this.watch_client.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.watch_client.Image = ((System.Drawing.Image)(resources.GetObject("watch_client.Image")));
+            this.watch_client.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.watch_client.Name = "watch_client";
+            this.watch_client.Size = new System.Drawing.Size(68, 22);
+            this.watch_client.Text = "Просмотр";
+            this.watch_client.Click += new System.EventHandler(this.watch_client_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(25, 186);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Выбрать страну";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DataSource = this.cOUNTRYBindingSource;
+            this.comboBox3.DisplayMember = "NAME";
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(28, 205);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(151, 21);
+            this.comboBox3.TabIndex = 12;
+            this.comboBox3.ValueMember = "ID";
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(185, 208);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 14;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(185, 164);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(15, 14);
+            this.checkBox2.TabIndex = 15;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // обновитьToolStripMenuItem
+            // 
+            this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
+            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.обновитьToolStripMenuItem.Text = "Обновить";
+            this.обновитьToolStripMenuItem.Click += new System.EventHandler(this.обновитьToolStripMenuItem_Click);
             // 
             // Form2
             // 
@@ -301,14 +391,14 @@ namespace WindowsFormsApp1
             this.Load += new System.EventHandler(this.Form2_Load);
             this.Grp_Add.ResumeLayout(false);
             this.Grp_Add.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cITYBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOUNTRYBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cITYBindingSource)).EndInit();
             this.Grp_Edit.ResumeLayout(false);
             this.Grp_Edit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cOUNTRYBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,5 +434,13 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox login_box;
         private System.Windows.Forms.BindingSource cOUNTRYBindingSource;
         private DataSetTableAdapters.COUNTRYTableAdapter cOUNTRYTableAdapter;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox name_ff_box;
+        private System.Windows.Forms.ToolStripButton watch_client;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.ToolStripMenuItem обновитьToolStripMenuItem;
     }
 }
