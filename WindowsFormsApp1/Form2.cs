@@ -203,27 +203,8 @@ namespace WindowsFormsApp1
         {
             Form4 fg = new Form4();
             fg.Show();
-            using (System.Data.OracleClient.OracleConnection ConnectionToOracle = new System.Data.OracleClient.OracleConnection(connectionString))
-            {
-                System.Data.OracleClient.OracleCommand cmd = new System.Data.OracleClient.OracleCommand();
-                OracleDataAdapter dataAdapter = new OracleDataAdapter("SELECT * FROM USERS", connectionString);
-                DataSet dataSet = new DataSet();
-                dataAdapter.Fill(dataSet);
-                fg.dataGridView1.DataSource = dataSet.Tables["USERS"];
-            }
         }
         
-        void Load_FR4()
-        {
-            Form4 fg = new Form4();
-            System.Data.OracleClient.OracleConnection connectionString = new System.Data.OracleClient.OracleConnection("Data Source = localhost:1521/temp_cur; User ID=SADMIN;password=pwd123");
-
-            connectionString.Open();
-            DataSet ds = new DataSet();
-            System.Data.OracleClient.OracleDataAdapter dataAdapter = new System.Data.OracleClient.OracleDataAdapter("SELECT * FROM USERS", connectionString);
-            DataTable table = new DataTable();
-            dataAdapter.Fill(table);
-            fg.dataGridView1.DataSource = table;
-        }
+        
     }
 }

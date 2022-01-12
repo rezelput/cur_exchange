@@ -40,7 +40,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-        int id = Convert.ToInt32(id_htr.SelectedValue);
+                        int id = Convert.ToInt32(id_htr.SelectedValue);
                         int id_ttype = Convert.ToInt32(type_update.SelectedValue);
                         DateTime dateyy = Convert.ToDateTime(dateTimePicker.Value);
                         string summ = Convert.ToString(sumBox.SelectedValue);
@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
                             MessageBox.Show("История создана");
                             Form4 fr4 = new Form4();
                             fr4.Show();
-                            this.Close();
+                            //this.Close();
                     
                         }
             

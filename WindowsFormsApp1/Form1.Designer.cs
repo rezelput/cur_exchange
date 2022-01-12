@@ -51,7 +51,6 @@ namespace WindowsFormsApp1
             this.analyst_op = new System.Windows.Forms.ToolStripMenuItem();
             this.UpdateDtabtn = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьИсториюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.currency_exch_his = new System.Windows.Forms.ToolStripMenuItem();
             this.histr_op = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.oPERATIONTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.OPERATIONTableAdapter();
@@ -215,18 +214,10 @@ namespace WindowsFormsApp1
             // создатьИсториюToolStripMenuItem
             // 
             this.создатьИсториюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.currency_exch_his,
             this.histr_op});
             this.создатьИсториюToolStripMenuItem.Name = "создатьИсториюToolStripMenuItem";
             this.создатьИсториюToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.создатьИсториюToolStripMenuItem.Text = "Создать историю";
-            // 
-            // currency_exch_his
-            // 
-            this.currency_exch_his.Name = "currency_exch_his";
-            this.currency_exch_his.Size = new System.Drawing.Size(180, 22);
-            this.currency_exch_his.Text = "Курс валюты";
-            this.currency_exch_his.Click += new System.EventHandler(this.currency_exch_his_Click);
             // 
             // histr_op
             // 
@@ -302,7 +293,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.ToolStripMenuItem UpdateDtabtn;
         private System.Windows.Forms.ToolStripMenuItem создатьИсториюToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem currency_exch_his;
         private System.Windows.Forms.ToolStripMenuItem histr_op;
     }
 }
