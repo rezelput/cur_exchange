@@ -55,12 +55,13 @@ namespace WindowsFormsApp1
             this.создатьИсториюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.histr_op = new System.Windows.Forms.ToolStripMenuItem();
             this.курсВалютToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изменитьПользователяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.oPERATIONTableAdapter = new WindowsFormsApp1.DataSetTableAdapters.OPERATIONTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.изменитьПользователяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.search = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPERATIONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
@@ -142,6 +143,7 @@ namespace WindowsFormsApp1
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSplitButton1,
             this.toolStripSplitButton2,
+            this.search,
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -175,7 +177,7 @@ namespace WindowsFormsApp1
             this.добавитьредактироватьToolStripMenuItem,
             this.delete_menu});
             this.clientadd_btn.Name = "clientadd_btn";
-            this.clientadd_btn.Size = new System.Drawing.Size(180, 22);
+            this.clientadd_btn.Size = new System.Drawing.Size(129, 22);
             this.clientadd_btn.Text = "Клиент";
             this.clientadd_btn.Click += new System.EventHandler(this.clientadd_btn_Click);
             // 
@@ -196,7 +198,7 @@ namespace WindowsFormsApp1
             // opadd_btn
             // 
             this.opadd_btn.Name = "opadd_btn";
-            this.opadd_btn.Size = new System.Drawing.Size(180, 22);
+            this.opadd_btn.Size = new System.Drawing.Size(129, 22);
             this.opadd_btn.Text = "Операция";
             this.opadd_btn.Click += new System.EventHandler(this.opadd_btn_Click);
             // 
@@ -219,7 +221,7 @@ namespace WindowsFormsApp1
             this.процедураToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.analyst_op});
             this.процедураToolStripMenuItem.Name = "процедураToolStripMenuItem";
-            this.процедураToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.процедураToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.процедураToolStripMenuItem.Text = "Отчет";
             // 
             // analyst_op
@@ -232,7 +234,7 @@ namespace WindowsFormsApp1
             // UpdateDtabtn
             // 
             this.UpdateDtabtn.Name = "UpdateDtabtn";
-            this.UpdateDtabtn.Size = new System.Drawing.Size(180, 22);
+            this.UpdateDtabtn.Size = new System.Drawing.Size(206, 22);
             this.UpdateDtabtn.Text = "Обновить данные";
             this.UpdateDtabtn.Click += new System.EventHandler(this.UpdateDtabtn_Click);
             // 
@@ -242,7 +244,7 @@ namespace WindowsFormsApp1
             this.histr_op,
             this.курсВалютToolStripMenuItem});
             this.создатьИсториюToolStripMenuItem.Name = "создатьИсториюToolStripMenuItem";
-            this.создатьИсториюToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.создатьИсториюToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.создатьИсториюToolStripMenuItem.Text = "Создать историю";
             // 
             // histr_op
@@ -258,6 +260,13 @@ namespace WindowsFormsApp1
             this.курсВалютToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.курсВалютToolStripMenuItem.Text = "курс валют";
             this.курсВалютToolStripMenuItem.Click += new System.EventHandler(this.курсВалютToolStripMenuItem_Click);
+            // 
+            // изменитьПользователяToolStripMenuItem
+            // 
+            this.изменитьПользователяToolStripMenuItem.Name = "изменитьПользователяToolStripMenuItem";
+            this.изменитьПользователяToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.изменитьПользователяToolStripMenuItem.Text = "Изменить пользователя";
+            this.изменитьПользователяToolStripMenuItem.Click += new System.EventHandler(this.изменитьПользователяToolStripMenuItem_Click);
             // 
             // toolStripButton1
             // 
@@ -300,12 +309,14 @@ namespace WindowsFormsApp1
             this.label2.TabIndex = 4;
             this.label2.Text = "Profile:";
             // 
-            // изменитьПользователяToolStripMenuItem
+            // search
             // 
-            this.изменитьПользователяToolStripMenuItem.Name = "изменитьПользователяToolStripMenuItem";
-            this.изменитьПользователяToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.изменитьПользователяToolStripMenuItem.Text = "Изменить пользователя";
-            this.изменитьПользователяToolStripMenuItem.Click += new System.EventHandler(this.изменитьПользователяToolStripMenuItem_Click);
+            this.search.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.search.Image = ((System.Drawing.Image)(resources.GetObject("search.Image")));
+            this.search.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(23, 22);
+            this.search.Text = "toolStripButton2";
             // 
             // Form1
             // 
@@ -333,8 +344,6 @@ namespace WindowsFormsApp1
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;
@@ -371,6 +380,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem изменитьПользователяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton search;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

@@ -164,6 +164,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="seacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seacher.Designer.cs">
+      <DependentUpon>seacher.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="addhistrop.resx">
       <DependentUpon>addhistrop.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +203,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="seacher.resx">
+      <DependentUpon>seacher.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataSet.xsc">
       <DependentUpon>DataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
